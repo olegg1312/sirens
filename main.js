@@ -1,5 +1,121 @@
 'use strict';
 
+/* ---- TELEGRAM WIDGET + BOT ---- */
+(function () {
+  const BOT_TOKEN = '8682815378:AAEz7W4L74I9h0ZIj4p0_BB3icnQINslbAk';
+  const CHAT_ID   = '666277728'; // меняй здесь если нужно
+
+  const btn      = document.getElementById('tg-btn');
+  const bubble   = document.getElementById('tg-bubble');
+  const closeBtn = document.getElementById('tg-bubble-close');
+  const badge    = btn?.querySelector('.tg-btn__badge');
+  const iconTg   = btn?.querySelector('.tg-btn__icon--tg');
+  const iconX    = btn?.querySelector('.tg-btn__icon--close');
+  if (!btn || !bubble) return;
+
+  let open = false;
+
+  /* --- Рендерим форму внутри пузыря --- */
+  const body = bubble.querySelector('.tg-bubble__body');
+  if (body) {
+    body.innerHTML = `
+      <div class="tg-bubble__msg">
+        Привет! 👋 Напишите ваше имя и вопрос — ответим в течение 15 минут.
+      </div>
+      <div class="tg-form" id="tg-form">
+        <input class="tg-input" id="tg-name" type="text" placeholder="Ваше имя" autocomplete="name">
+        <textarea class="tg-input tg-textarea" id="tg-msg" rows="3" placeholder="Ваш вопрос..."></textarea>
+        <button class="tg-submit" id="tg-submit">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/></svg>
+          Отправить
+        </button>
+      </div>
+      <div class="tg-success" id="tg-success" style="display:none">
+        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#4ade80" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+        <p>Сообщение отправлено!<br>Ответим в течение 15 минут.</p>
+      </div>
+    `;
+  }
+
+  /* --- Отправка через Bot API --- */
+  document.addEventListener('click', async (e) => {
+    if (!e.target.closest('#tg-submit')) return;
+    const nameEl = document.getElementById('tg-name');
+    const msgEl  = document.getElementById('tg-msg');
+    const name   = nameEl?.value.trim();
+    const msg    = msgEl?.value.trim();
+
+    if (!msg) { msgEl?.focus(); return; }
+
+    const submitBtn = document.getElementById('tg-submit');
+    submitBtn.textContent = 'Отправка...';
+    submitBtn.disabled = true;
+
+    const text = [
+      '📩 *Новое сообщение с сайта*',
+      name ? `👤 Имя: ${name}` : '👤 Аноним',
+      `💬 ${msg}`,
+      `🌐 Сайт: ${location.href}`
+    ].join('\n');
+
+    try {
+      const res = await fetch(
+        `https://api.telegram.org/bot${BOT_TOKEN}/sendMessage`,
+        {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            chat_id: CHAT_ID,
+            text,
+            parse_mode: 'Markdown'
+          })
+        }
+      );
+      const data = await res.json();
+      if (data.ok) {
+        document.getElementById('tg-form').style.display    = 'none';
+        document.getElementById('tg-success').style.display = 'flex';
+      } else {
+        throw new Error(data.description);
+      }
+    } catch (err) {
+      submitBtn.textContent = 'Ошибка, попробуйте ещё';
+      submitBtn.disabled = false;
+      console.error(err);
+    }
+  });
+
+  /* --- Открыть / закрыть --- */
+  function show() {
+    open = true;
+    bubble.style.display = '';
+    requestAnimationFrame(() => bubble.classList.remove('hidden'));
+    if (badge)  badge.classList.add('hidden');
+    if (iconTg) iconTg.style.display = 'none';
+    if (iconX)  iconX.style.display  = 'block';
+  }
+
+  function hide() {
+    open = false;
+    bubble.classList.add('hidden');
+    if (iconTg) iconTg.style.display = 'block';
+    if (iconX)  iconX.style.display  = 'none';
+    setTimeout(() => { if (!open) bubble.style.display = 'none'; }, 260);
+  }
+
+  bubble.classList.add('hidden');
+  bubble.style.display = 'none';
+
+  btn.onclick = () => { open ? hide() : show(); };
+  closeBtn?.addEventListener('click', (e) => { e.stopPropagation(); hide(); });
+  document.addEventListener('click', (e) => {
+    if (open && !btn.contains(e.target) && !bubble.contains(e.target)) hide();
+  });
+
+  // Автооткрытие через 4 секунды
+  setTimeout(() => { if (!open) show(); }, 4000);
+})();
+
 /* ---- THEME TOGGLE ---- */
 (function () {
   const html = document.documentElement;
