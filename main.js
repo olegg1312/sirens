@@ -20,10 +20,10 @@
   if (body) {
     body.innerHTML = `
       <div class="tg-bubble__msg">
-        Привет! 👋 Напишите ваше имя и вопрос — ответим в течение 15 минут.
+        Привет! 👋 Напишите ваши контактные даннные и вопрос — ответим в течение 15 минут.
       </div>
       <div class="tg-form" id="tg-form">
-        <input class="tg-input" id="tg-name" type="text" placeholder="Ваше имя" autocomplete="name">
+        <input class="tg-input" id="tg-name" type="text" placeholder="@username в tg / телефон" autocomplete="name">
         <textarea class="tg-input tg-textarea" id="tg-msg" rows="3" placeholder="Ваш вопрос..."></textarea>
         <button class="tg-submit" id="tg-submit">
           <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/></svg>
@@ -218,6 +218,102 @@
   els.forEach(el => obs.observe(el));
 })();
 
+
+/* ---- КАРУСЕЛЬ КЕЙСОВ ---- */
+(function () {
+  const scroll   = document.getElementById('cases-scroll');
+  const prevBtn  = document.getElementById('cases-prev');
+  const nextBtn  = document.getElementById('cases-next');
+  const dotsWrap = document.getElementById('cases-dots');
+  if (!scroll || !prevBtn || !nextBtn) return;
+
+  const cards = Array.from(scroll.querySelectorAll('.case-card--scroll'));
+  if (!cards.length) return;
+
+  // Создаём точки
+  cards.forEach((_, i) => {
+    const dot = document.createElement('button');
+    dot.className = 'cases__dot' + (i === 0 ? ' active' : '');
+    dot.setAttribute('aria-label', `Кейс ${i + 1}`);
+    dot.addEventListener('click', () => goTo(i));
+    dotsWrap.appendChild(dot);
+  });
+
+  const dots = Array.from(dotsWrap.querySelectorAll('.cases__dot'));
+  let current = 0;
+  let isScrolling = false;
+
+  function goTo(idx) {
+    idx = Math.max(0, Math.min(idx, cards.length - 1));
+    current = idx;
+    const card = cards[idx];
+    const left = card.offsetLeft - scroll.offsetLeft;
+
+    // Плавная анимация через JS (более контролируемая чем CSS scroll-behavior)
+    smoothScrollTo(scroll, left, 420);
+    updateUI();
+  }
+
+  function updateUI() {
+    dots.forEach((d, i) => d.classList.toggle('active', i === current));
+    prevBtn.disabled = current === 0;
+    nextBtn.disabled = current === cards.length - 1;
+
+    // Подсвечиваем активную, гасим остальные
+    cards.forEach((c, i) => {
+      c.classList.toggle('is-offscreen', Math.abs(i - current) > 0);
+    });
+  }
+
+  prevBtn.addEventListener('click', () => goTo(current - 1));
+  nextBtn.addEventListener('click', () => goTo(current + 1));
+
+  // Следим за скроллом — обновляем точки когда пользователь скроллит вручную
+  scroll.addEventListener('scroll', () => {
+    if (isScrolling) return;
+    const scrollLeft = scroll.scrollLeft;
+    let closest = 0;
+    let closestDist = Infinity;
+    cards.forEach((c, i) => {
+      const dist = Math.abs(c.offsetLeft - scroll.offsetLeft - scrollLeft);
+      if (dist < closestDist) { closestDist = dist; closest = i; }
+    });
+    if (closest !== current) { current = closest; updateUI(); }
+  }, { passive: true });
+
+  // Свайп на тач-устройствах
+  let touchStartX = 0;
+  scroll.addEventListener('touchstart', e => { touchStartX = e.touches[0].clientX; }, { passive: true });
+  scroll.addEventListener('touchend', e => {
+    const dx = e.changedTouches[0].clientX - touchStartX;
+    if (Math.abs(dx) > 50) goTo(dx < 0 ? current + 1 : current - 1);
+  }, { passive: true });
+
+  // Инит
+  updateUI();
+
+  // Плавный JS scroll (easeInOutCubic)
+  function smoothScrollTo(el, to, duration) {
+    const start = el.scrollLeft;
+    const change = to - start;
+    const startTime = performance.now();
+    isScrolling = true;
+
+    function ease(t) { return t < 0.5 ? 4*t*t*t : (t-1)*(2*t-2)*(2*t-2)+1; }
+
+    function step(now) {
+      const elapsed = now - startTime;
+      const progress = Math.min(elapsed / duration, 1);
+      el.scrollLeft = start + change * ease(progress);
+      if (progress < 1) {
+        requestAnimationFrame(step);
+      } else {
+        isScrolling = false;
+      }
+    }
+    requestAnimationFrame(step);
+  }
+})();
 
 /* ---- SMOOTH ANCHORS ---- */
 document.querySelectorAll('a[href^="#"]').forEach(a => {

@@ -514,9 +514,9 @@ a:hover { opacity:.85; }
 
 .step__connector {
   position:absolute;
-  top: 28px;
+  top: 30px;
   right: -20px;
-  width:60px;
+  width:40px;
   z-index:2;
   pointer-events:none;
 }
@@ -1137,4 +1137,209 @@ a:hover { opacity:.85; }
 
   /* Порядок работы — убрать лишний padding с сетки */
   .process__steps { padding-inline: 0; }
+}
+
+/* ===========================
+   ГОРИЗОНТАЛЬНЫЙ СКРОЛЛ КЕЙСОВ
+   =========================== */
+.cases__scroll {
+  display: flex;
+  gap: var(--sp-5);
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  padding-bottom: var(--sp-4);
+  margin-bottom: clamp(var(--sp-6), 4vw, var(--sp-10));
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-primary) var(--color-surface2);
+}
+
+.cases__scroll::-webkit-scrollbar { height: 4px; }
+.cases__scroll::-webkit-scrollbar-track { background: var(--color-surface2); border-radius: 2px; }
+.cases__scroll::-webkit-scrollbar-thumb { background: var(--color-primary); border-radius: 2px; }
+
+.case-card--scroll {
+  flex: 0 0 calc(50% - var(--sp-3));
+  scroll-snap-align: start;
+  min-width: 300px;
+}
+
+@media (max-width: 700px) {
+  .case-card--scroll {
+    flex: 0 0 85vw;
+  }
+}
+
+/* ===========================
+   СПИСКИ В КАРТОЧКАХ ЭКОСИСТЕМЫ
+   =========================== */
+.fact-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-2);
+  padding: 0;
+  margin: 0;
+}
+
+.fact-list li {
+  font-size: var(--text-sm);
+  color: var(--color-muted);
+  line-height: 1.55;
+  padding-left: var(--sp-5);
+  position: relative;
+}
+
+.fact-list li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 8px;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--color-primary);
+  flex-shrink: 0;
+}
+
+.step--active .fact-list li { color: rgba(255,255,255,.85); }
+.step--active .fact-list li::before { background: rgba(255,255,255,.6); }
+
+/* ===========================
+   КАРУСЕЛЬ КЕЙСОВ — КРАСИВАЯ
+   =========================== */
+
+/* Навигация */
+.cases__nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--sp-5);
+  margin-bottom: var(--sp-6);
+}
+
+.cases__arrow {
+  width: 44px; height: 44px;
+  border-radius: 50%;
+  border: 1.5px solid var(--color-border);
+  background: var(--color-surface);
+  color: var(--color-text-muted, var(--color-muted));
+  display: flex; align-items: center; justify-content: center;
+  cursor: pointer;
+  transition: background var(--t-ui), border-color var(--t-ui),
+              color var(--t-ui), transform var(--t-ui), box-shadow var(--t-ui);
+  flex-shrink: 0;
+}
+.cases__arrow:hover:not(:disabled) {
+  border-color: var(--color-primary);
+  color: var(--color-primary);
+  background: var(--color-primary-bg);
+  transform: scale(1.08);
+  box-shadow: 0 0 0 4px var(--color-primary-bg);
+}
+.cases__arrow:active:not(:disabled) { transform: scale(0.96); }
+.cases__arrow:disabled { opacity: 0.3; cursor: not-allowed; }
+
+/* Точки */
+.cases__dots {
+  display: flex;
+  gap: var(--sp-2);
+  align-items: center;
+}
+.cases__dot {
+  width: 8px; height: 8px;
+  border-radius: 50%;
+  background: var(--color-border);
+  cursor: pointer;
+  transition: background var(--t-ui), transform var(--t-ui), width var(--t-ui);
+  border: none;
+  padding: 0;
+}
+.cases__dot.active {
+  background: var(--color-primary);
+  transform: scale(1.2);
+  width: 22px;
+  border-radius: var(--r-full);
+}
+
+/* Обёртка скролла */
+.cases__scroll {
+  display: flex;
+  gap: var(--sp-5);
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  scroll-behavior: smooth;
+  padding-bottom: var(--sp-2);
+  /* Скрываем скроллбар визуально */
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+.cases__scroll::-webkit-scrollbar { display: none; }
+
+/* Карточка в карусели */
+.case-card--scroll {
+  flex: 0 0 calc(50% - var(--sp-3));
+  scroll-snap-align: start;
+  min-width: 300px;
+  /* Анимация появления при входе во вью */
+  transition:
+    border-color var(--t-ui),
+    box-shadow var(--t-ui),
+    transform 0.4s var(--ease-out),
+    opacity 0.4s var(--ease-out);
+}
+
+/* Неактивные карточки чуть тускнее */
+.case-card--scroll.is-offscreen {
+  opacity: 0.45;
+  transform: scale(0.97);
+}
+
+@media (max-width: 700px) {
+  .case-card--scroll {
+    flex: 0 0 88vw;
+  }
+}
+
+/* ===========================
+   КЕЙСЫ: сетка на десктопе, карусель на мобилке
+   =========================== */
+
+/* Навигация (стрелки + точки) — только на мобилке */
+.cases__nav { display: none; }
+
+/* На десктопе — обычная сетка 2x2 */
+@media (min-width: 701px) {
+  .cases__scroll {
+    display: grid !important;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--sp-6);
+    overflow: visible !important;
+    scroll-snap-type: none;
+    padding-bottom: 0;
+  }
+
+  .case-card--scroll {
+    flex: none !important;
+    min-width: 0 !important;
+    width: auto !important;
+    opacity: 1 !important;
+    transform: none !important;
+  }
+
+  .case-card--scroll.is-offscreen {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}
+
+/* На мобилке — карусель */
+@media (max-width: 700px) {
+  .cases__nav { display: flex; }
+
+  .cases__scroll {
+    display: flex !important;
+    overflow-x: auto !important;
+    scroll-snap-type: x mandatory;
+  }
 }
