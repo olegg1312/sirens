@@ -36,50 +36,50 @@
     `;
   }
 
-  /* --- Отправка через Bot API --- */
-  document.addEventListener('click', async (e) => {
-    if (!e.target.closest('#tg-submit')) return;
-    const nameEl = document.getElementById('tg-name');
-    const msgEl  = document.getElementById('tg-msg');
-    const name   = nameEl?.value.trim();
-    const msg    = msgEl?.value.trim();
+ document.addEventListener('click', async (e) => {
+  if (!e.target.closest('#tg-submit')) return;
 
-    if (!msg) { msgEl?.focus(); return; }
+  const nameEl = document.getElementById('tg-name');
+  const msgEl = document.getElementById('tg-msg');
+  const submitBtn = document.getElementById('tg-submit');
 
-    const submitBtn = document.getElementById('tg-submit');
-    submitBtn.textContent = 'Отправка...';
-    submitBtn.disabled = true;
+  const name = nameEl?.value.trim() || '';
+  const msg = msgEl?.value.trim() || '';
 
-    const text = [
-      '📩 *Новое сообщение с сайта*',
-      name ? `👤 Имя: ${name}` : '👤 Аноним',
-      `💬 ${msg}`,
-      `🌐 Сайт: ${location.href}`
-    ].join('\n');
+  if (!msg) {
+    msgEl?.focus();
+    return;
+  }
 
-    try {
-     const res = await fetch('/send-telegram.php', {
-     method: 'POST',
-     headers: { 'Content-Type': 'application/json' },
-     body: JSON.stringify({
-     name,
-     message,
-     page: location.href
-     })
-     });
-      const data = await res.json();
-      if (data.ok) {
-        document.getElementById('tg-form').style.display    = 'none';
-        document.getElementById('tg-success').style.display = 'flex';
-      } else {
-        throw new Error(data.description);
-      }
-    } catch (err) {
-      submitBtn.textContent = 'Ошибка, попробуйте ещё';
-      submitBtn.disabled = false;
-      console.error(err);
+  submitBtn.disabled = true;
+  submitBtn.textContent = 'Отправка...';
+
+  try {
+    const res = await fetch('send-telegram.php', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        name,
+        message: msg,
+        page: location.href
+      })
+    });
+
+    const data = await res.json();
+
+    if (!res.ok || !data.ok) {
+      throw new Error(data.error || 'Send failed');
     }
-  });
+
+    document.getElementById('tg-form').style.display = 'none';
+    document.getElementById('tg-success').style.display = 'flex';
+  } catch (err) {
+    console.error(err);
+    submitBtn.disabled = false;
+    submitBtn.textContent = 'Отправить';
+    alert(err.message || 'Ошибка отправки');
+  }
+ });
 
   /* --- Открыть / закрыть --- */
   function show() {
