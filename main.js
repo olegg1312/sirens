@@ -2,8 +2,7 @@
 
 /* ---- TELEGRAM WIDGET + BOT ---- */
 (function () {
-  const BOT_TOKEN = '8682815378:AAEz7W4L74I9h0ZIj4p0_BB3icnQINslbAk';
-  const CHAT_ID   = '666277728'; // меняй здесь если нужно
+
 
   const btn      = document.getElementById('tg-btn');
   const bubble   = document.getElementById('tg-bubble');
