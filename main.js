@@ -58,18 +58,15 @@
     ].join('\n');
 
     try {
-      const res = await fetch(
-        `https://api.telegram.org/bot${BOT_TOKEN}/sendMessage`,
-        {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({
-            chat_id: CHAT_ID,
-            text,
-            parse_mode: 'Markdown'
-          })
-        }
-      );
+     const res = await fetch('/send-telegram.php', {
+     method: 'POST',
+     headers: { 'Content-Type': 'application/json' },
+     body: JSON.stringify({
+     name,
+     message,
+     page: location.href
+     })
+     });
       const data = await res.json();
       if (data.ok) {
         document.getElementById('tg-form').style.display    = 'none';
