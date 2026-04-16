@@ -657,6 +657,7 @@ a:hover { opacity:.85; }
 .footer__copy { font-size:var(--text-xs); color:var(--color-faint); }
 .footer__links { display:flex; gap:var(--sp-6); }
 .footer__links a { font-size:var(--text-xs); color:var(--color-faint); transition:color var(--t-ui); }
+.footer__meta-note{ font-size:var(--text-xs); color:var(--color-faint); transition:color var(--t-ui);}
 .footer__links a:hover { color:var(--color-primary); opacity:1; }
 
 /* ===========================
