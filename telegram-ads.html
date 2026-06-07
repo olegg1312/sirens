@@ -29,12 +29,16 @@
        ============================== -->
   <style>
     /* --- СЕГМЕНТАЦИЯ --- */
-    .segments { background: var(--color-bg); }
+    .segments {
+      background: var(--color-bg);
+    }
+
     .segments__grid {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
       gap: var(--sp-6);
     }
+
     .segment-card {
       display: flex;
       flex-direction: column;
@@ -46,27 +50,47 @@
       box-shadow: var(--shadow-sm);
       transition: border-color var(--t-ui), box-shadow var(--t-ui), transform var(--t-ui);
     }
+
     .segment-card:hover {
       border-color: var(--color-primary);
       box-shadow: var(--shadow-md), 0 0 0 3px var(--color-primary-bg);
       transform: translateY(-4px);
     }
+
     .segment-card__icon {
-      width: 52px; height: 52px;
-      display: flex; align-items: center; justify-content: center;
-      background: var(--color-primary-bg); border-radius: var(--r-lg);
+      width: 52px;
+      height: 52px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--color-primary-bg);
+      border-radius: var(--r-lg);
       color: var(--color-primary);
     }
-    .segment-card h3 { font-size: var(--text-lg); font-weight: 700; color: var(--color-text); }
-    .segment-card p { font-size: var(--text-sm); color: var(--color-muted); line-height: 1.65; }
+
+    .segment-card h3 {
+      font-size: var(--text-lg);
+      font-weight: 700;
+      color: var(--color-text);
+    }
+
+    .segment-card p {
+      font-size: var(--text-sm);
+      color: var(--color-muted);
+      line-height: 1.65;
+    }
 
     /* --- БЛОК БОЛЕЙ / МИФЫ --- */
-    .myths { background: var(--color-section2); }
+    .myths {
+      background: var(--color-section2);
+    }
+
     .myths__grid {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
       gap: var(--sp-6);
     }
+
     .myth-card {
       padding: var(--sp-8);
       background: var(--color-surface);
@@ -75,114 +99,278 @@
       box-shadow: var(--shadow-sm);
       transition: border-color var(--t-ui), box-shadow var(--t-ui), transform var(--t-ui);
     }
+
     .myth-card:hover {
       border-color: var(--color-primary);
       box-shadow: var(--shadow-md);
       transform: translateY(-3px);
     }
+
     .myth-card__head {
-      display: flex; align-items: flex-start; gap: var(--sp-3);
+      display: flex;
+      align-items: flex-start;
+      gap: var(--sp-3);
       margin-bottom: var(--sp-4);
     }
+
     .myth-card__icon {
-      width: 40px; height: 40px; flex-shrink: 0;
-      display: flex; align-items: center; justify-content: center;
-      background: rgba(255,59,48,.1); border-radius: var(--r-md);
+      width: 40px;
+      height: 40px;
+      flex-shrink: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(255, 59, 48, .1);
+      border-radius: var(--r-md);
       color: #ff3b30;
     }
-    .myth-card__myth { font-size: var(--text-base); font-weight: 700; color: var(--color-text); line-height: 1.4; }
-    .myth-card__sol {
-      display: flex; gap: var(--sp-3); align-items: flex-start;
-      padding-top: var(--sp-4); border-top: 1px solid var(--color-divider);
+
+    .myth-card__myth {
+      font-size: var(--text-base);
+      font-weight: 700;
+      color: var(--color-text);
+      line-height: 1.4;
     }
+
+    .myth-card__sol {
+      display: flex;
+      gap: var(--sp-3);
+      align-items: flex-start;
+      padding-top: var(--sp-4);
+      border-top: 1px solid var(--color-divider);
+    }
+
     .myth-card__sol-icon {
-      width: 28px; height: 28px; flex-shrink: 0;
-      display: flex; align-items: center; justify-content: center;
-      background: rgba(74,222,128,.12); border-radius: 50%;
+      width: 28px;
+      height: 28px;
+      flex-shrink: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(74, 222, 128, .12);
+      border-radius: 50%;
       color: #16a34a;
     }
-    .myth-card__sol p { font-size: var(--text-sm); color: var(--color-muted); line-height: 1.6; }
-    .myth-card__sol strong { color: var(--color-text); font-weight: 700; }
+
+    .myth-card__sol p {
+      font-size: var(--text-sm);
+      color: var(--color-muted);
+      line-height: 1.6;
+    }
+
+    .myth-card__sol strong {
+      color: var(--color-text);
+      font-weight: 700;
+    }
 
     /* --- КВИЗ-КАЛЬКУЛЯТОР --- */
-    .quiz { background: var(--color-bg); }
+    .quiz {
+      background: var(--color-bg);
+    }
+
     .quiz__box {
-      max-width: 680px; margin-inline: auto;
+      max-width: 680px;
+      margin-inline: auto;
       background: var(--color-surface);
       border: 1px solid var(--color-border);
       border-radius: var(--r-2xl);
-      box-shadow: var(--shadow-md), 0 0 60px rgba(42,171,238,.07);
+      box-shadow: var(--shadow-md), 0 0 60px rgba(42, 171, 238, .07);
       overflow: hidden;
     }
-    .quiz__progress { height: 4px; background: var(--color-divider); }
+
+    .quiz__progress {
+      height: 4px;
+      background: var(--color-divider);
+    }
+
     .quiz__progress-bar {
       height: 100%;
       background: linear-gradient(90deg, #2aabee, #229ed9);
       width: 25%;
       transition: width .4s var(--ease-out);
     }
-    .quiz__inner { padding: clamp(var(--sp-6), 4vw, var(--sp-10)); }
-    .quiz__step { display: none; animation: quiz-in .4s var(--ease-out); }
-    .quiz__step.active { display: block; }
-    @keyframes quiz-in { from { opacity:0; transform: translateY(10px); } to { opacity:1; transform: translateY(0); } }
-    .quiz__count { font-size: var(--text-xs); font-weight: 600; letter-spacing: .08em; text-transform: uppercase; color: var(--color-primary); margin-bottom: var(--sp-3); }
-    .quiz__q { font-size: var(--text-xl); font-weight: 800; color: var(--color-text); margin-bottom: var(--sp-6); letter-spacing: -.02em; }
-    .quiz__options { display: flex; flex-direction: column; gap: var(--sp-3); }
+
+    .quiz__inner {
+      padding: clamp(var(--sp-6), 4vw, var(--sp-10));
+    }
+
+    .quiz__step {
+      display: none;
+      animation: quiz-in .4s var(--ease-out);
+    }
+
+    .quiz__step.active {
+      display: block;
+    }
+
+    @keyframes quiz-in {
+      from {
+        opacity: 0;
+        transform: translateY(10px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .quiz__count {
+      font-size: var(--text-xs);
+      font-weight: 600;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      color: var(--color-primary);
+      margin-bottom: var(--sp-3);
+    }
+
+    .quiz__q {
+      font-size: var(--text-xl);
+      font-weight: 800;
+      color: var(--color-text);
+      margin-bottom: var(--sp-6);
+      letter-spacing: -.02em;
+    }
+
+    .quiz__options {
+      display: flex;
+      flex-direction: column;
+      gap: var(--sp-3);
+    }
+
     .quiz__opt {
-      display: flex; align-items: center; gap: var(--sp-4);
+      display: flex;
+      align-items: center;
+      gap: var(--sp-4);
       padding: var(--sp-4) var(--sp-5);
       background: var(--color-bg2);
       border: 1.5px solid var(--color-border);
       border-radius: var(--r-lg);
-      font-size: var(--text-base); font-weight: 500; color: var(--color-text);
-      cursor: pointer; text-align: left; width: 100%;
+      font-size: var(--text-base);
+      font-weight: 500;
+      color: var(--color-text);
+      cursor: pointer;
+      text-align: left;
+      width: 100%;
       transition: border-color var(--t-ui), background var(--t-ui), transform var(--t-ui);
     }
-    .quiz__opt:hover { border-color: var(--color-primary); background: var(--color-primary-bg); transform: translateX(4px); }
+
+    .quiz__opt:hover {
+      border-color: var(--color-primary);
+      background: var(--color-primary-bg);
+      transform: translateX(4px);
+    }
+
     .quiz__opt-radio {
-      width: 22px; height: 22px; border-radius: 50%; flex-shrink: 0;
-      border: 2px solid var(--color-faint); position: relative;
+      width: 22px;
+      height: 22px;
+      border-radius: 50%;
+      flex-shrink: 0;
+      border: 2px solid var(--color-faint);
+      position: relative;
       transition: border-color var(--t-ui);
     }
-    .quiz__opt:hover .quiz__opt-radio { border-color: var(--color-primary); }
-    .quiz__final-lead { font-size: var(--text-sm); color: var(--color-muted); margin-bottom: var(--sp-5); line-height: 1.6; }
-    .quiz__form { display: flex; flex-direction: column; gap: var(--sp-4); }
+
+    .quiz__opt:hover .quiz__opt-radio {
+      border-color: var(--color-primary);
+    }
+
+    .quiz__final-lead {
+      font-size: var(--text-sm);
+      color: var(--color-muted);
+      margin-bottom: var(--sp-5);
+      line-height: 1.6;
+    }
+
+    .quiz__form {
+      display: flex;
+      flex-direction: column;
+      gap: var(--sp-4);
+    }
+
     .quiz__input {
-      width: 100%; padding: var(--sp-4) var(--sp-5);
-      background: var(--color-bg2); border: 1.5px solid var(--color-border);
-      border-radius: var(--r-lg); font-size: var(--text-base); color: var(--color-text);
-      outline: none; font-family: var(--font);
+      width: 100%;
+      padding: var(--sp-4) var(--sp-5);
+      background: var(--color-bg2);
+      border: 1.5px solid var(--color-border);
+      border-radius: var(--r-lg);
+      font-size: var(--text-base);
+      color: var(--color-text);
+      outline: none;
+      font-family: var(--font);
       transition: border-color var(--t-ui), box-shadow var(--t-ui);
     }
-    .quiz__input::placeholder { color: var(--color-faint); }
-    .quiz__input:focus { border-color: var(--color-primary); box-shadow: 0 0 0 3px var(--color-primary-bg); }
+
+    .quiz__input::placeholder {
+      color: var(--color-faint);
+    }
+
+    .quiz__input:focus {
+      border-color: var(--color-primary);
+      box-shadow: 0 0 0 3px var(--color-primary-bg);
+    }
+
     .quiz__success {
-      text-align: center; display: flex; flex-direction: column; align-items: center; gap: var(--sp-4);
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: var(--sp-4);
       padding: var(--sp-6) 0;
     }
+
     .quiz__success-icon {
-      width: 56px; height: 56px; border-radius: 50%;
-      background: rgba(74,222,128,.12); display: flex; align-items: center; justify-content: center;
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      background: rgba(74, 222, 128, .12);
+      display: flex;
+      align-items: center;
+      justify-content: center;
       color: #16a34a;
     }
-    .quiz__success h3 { font-size: var(--text-lg); font-weight: 800; color: var(--color-text); }
-    .quiz__success p { font-size: var(--text-sm); color: var(--color-muted); line-height: 1.6; }
-    .quiz__back {
-      margin-top: var(--sp-5); font-size: var(--text-sm); font-weight: 600; color: var(--color-muted);
-      display: inline-flex; align-items: center; gap: var(--sp-2);
+
+    .quiz__success h3 {
+      font-size: var(--text-lg);
+      font-weight: 800;
+      color: var(--color-text);
     }
-    .quiz__back:hover { color: var(--color-primary); }
+
+    .quiz__success p {
+      font-size: var(--text-sm);
+      color: var(--color-muted);
+      line-height: 1.6;
+    }
+
+    .quiz__back {
+      margin-top: var(--sp-5);
+      font-size: var(--text-sm);
+      font-weight: 600;
+      color: var(--color-muted);
+      display: inline-flex;
+      align-items: center;
+      gap: var(--sp-2);
+    }
+
+    .quiz__back:hover {
+      color: var(--color-primary);
+    }
 
     /* --- ТАРИФЫ --- */
-    .pricing { background: var(--color-section2); }
+    .pricing {
+      background: var(--color-section2);
+    }
+
     .pricing__grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       gap: var(--sp-6);
       align-items: stretch;
     }
+
     .price-card {
-      display: flex; flex-direction: column;
+      display: flex;
+      flex-direction: column;
       padding: var(--sp-8);
       background: var(--color-surface);
       border: 1px solid var(--color-border);
@@ -191,47 +379,112 @@
       position: relative;
       transition: border-color var(--t-ui), box-shadow var(--t-ui), transform var(--t-ui);
     }
-    .price-card:hover { box-shadow: var(--shadow-md); transform: translateY(-4px); }
+
+    .price-card:hover {
+      box-shadow: var(--shadow-md);
+      transform: translateY(-4px);
+    }
+
     .price-card--popular {
       border-color: var(--color-primary);
       box-shadow: var(--shadow-md), 0 0 0 3px var(--color-primary-bg);
     }
+
     .price-card__badge {
-      position: absolute; top: -13px; left: 50%; transform: translateX(-50%);
-      padding: 5px 16px; background: linear-gradient(135deg, #2aabee, #229ed9);
-      color: #fff; font-size: var(--text-xs); font-weight: 700;
-      border-radius: var(--r-full); white-space: nowrap;
+      position: absolute;
+      top: -13px;
+      left: 50%;
+      transform: translateX(-50%);
+      padding: 5px 16px;
+      background: linear-gradient(135deg, #2aabee, #229ed9);
+      color: #fff;
+      font-size: var(--text-xs);
+      font-weight: 700;
+      border-radius: var(--r-full);
+      white-space: nowrap;
       box-shadow: 0 4px 12px var(--color-primary-glow);
     }
-    .price-card__name { font-size: var(--text-lg); font-weight: 800; color: var(--color-text); }
-    .price-card__tagline { font-size: var(--text-sm); color: var(--color-muted); margin-top: var(--sp-2); min-height: 42px; line-height: 1.5; }
-    .price-card__list { display: flex; flex-direction: column; gap: var(--sp-3); margin: var(--sp-6) 0; flex: 1; }
-    .price-card__list li {
-      font-size: var(--text-sm); color: var(--color-text2); line-height: 1.5;
-      padding-left: var(--sp-6); position: relative;
+
+    .price-card__name {
+      font-size: var(--text-lg);
+      font-weight: 800;
+      color: var(--color-text);
     }
+
+    .price-card__tagline {
+      font-size: var(--text-sm);
+      color: var(--color-muted);
+      margin-top: var(--sp-2);
+      min-height: 42px;
+      line-height: 1.5;
+    }
+
+    .price-card__list {
+      display: flex;
+      flex-direction: column;
+      gap: var(--sp-3);
+      margin: var(--sp-6) 0;
+      flex: 1;
+    }
+
+    .price-card__list li {
+      font-size: var(--text-sm);
+      color: var(--color-text2);
+      line-height: 1.5;
+      padding-left: var(--sp-6);
+      position: relative;
+    }
+
     .price-card__list li::before {
-      content: ''; position: absolute; left: 0; top: 4px;
-      width: 16px; height: 16px;
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 4px;
+      width: 16px;
+      height: 16px;
       background: var(--color-primary-bg);
       border-radius: 50%;
     }
+
     .price-card__list li::after {
-      content: ''; position: absolute; left: 5px; top: 8px;
-      width: 6px; height: 3px;
+      content: '';
+      position: absolute;
+      left: 5px;
+      top: 8px;
+      width: 6px;
+      height: 3px;
       border-left: 1.5px solid var(--color-primary);
       border-bottom: 1.5px solid var(--color-primary);
       transform: rotate(-45deg);
     }
+
     .price-card__price {
-      font-size: var(--text-xl); font-weight: 900; color: var(--color-text);
-      margin-bottom: var(--sp-5); letter-spacing: -.02em;
+      font-size: var(--text-xl);
+      font-weight: 900;
+      color: var(--color-text);
+      margin-bottom: var(--sp-5);
+      letter-spacing: -.02em;
     }
-    .price-card__price span { font-size: var(--text-sm); font-weight: 500; color: var(--color-muted); }
+
+    .price-card__price span {
+      font-size: var(--text-sm);
+      font-weight: 500;
+      color: var(--color-muted);
+    }
 
     /* --- FAQ --- */
-    .faq { background: var(--color-bg); }
-    .faq__list { max-width: 760px; margin-inline: auto; display: flex; flex-direction: column; gap: var(--sp-4); }
+    .faq {
+      background: var(--color-bg);
+    }
+
+    .faq__list {
+      max-width: 760px;
+      margin-inline: auto;
+      display: flex;
+      flex-direction: column;
+      gap: var(--sp-4);
+    }
+
     .faq-item {
       background: var(--color-surface);
       border: 1px solid var(--color-border);
@@ -239,72 +492,162 @@
       overflow: hidden;
       transition: border-color var(--t-ui), box-shadow var(--t-ui);
     }
-    .faq-item[open] { border-color: var(--color-primary); box-shadow: var(--shadow-sm); }
-    .faq-item__q {
-      display: flex; align-items: center; justify-content: space-between; gap: var(--sp-4);
-      padding: var(--sp-5) var(--sp-6);
-      font-size: var(--text-base); font-weight: 600; color: var(--color-text);
-      cursor: pointer; list-style: none;
+
+    .faq-item[open] {
+      border-color: var(--color-primary);
+      box-shadow: var(--shadow-sm);
     }
-    .faq-item__q::-webkit-details-marker { display: none; }
+
+    .faq-item__q {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: var(--sp-4);
+      padding: var(--sp-5) var(--sp-6);
+      font-size: var(--text-base);
+      font-weight: 600;
+      color: var(--color-text);
+      cursor: pointer;
+      list-style: none;
+    }
+
+    .faq-item__q::-webkit-details-marker {
+      display: none;
+    }
+
     .faq-item__icon {
-      width: 28px; height: 28px; flex-shrink: 0;
-      display: flex; align-items: center; justify-content: center;
+      width: 28px;
+      height: 28px;
+      flex-shrink: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
       color: var(--color-primary);
       transition: transform var(--t-ui);
     }
-    .faq-item[open] .faq-item__icon { transform: rotate(45deg); }
+
+    .faq-item[open] .faq-item__icon {
+      transform: rotate(45deg);
+    }
+
     .faq-item__a {
       padding: 0 var(--sp-6) var(--sp-5);
-      font-size: var(--text-sm); color: var(--color-muted); line-height: 1.7;
+      font-size: var(--text-sm);
+      color: var(--color-muted);
+      line-height: 1.7;
     }
 
     /* --- ФИНАЛЬНЫЙ CTA --- */
-    .final-cta { background: var(--color-primary-bg); }
+    .final-cta {
+      background: var(--color-primary-bg);
+    }
+
     .final-cta__inner {
       text-align: center;
-      display: flex; flex-direction: column; align-items: center; gap: var(--sp-6);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: var(--sp-6);
       padding: clamp(var(--sp-10), 5vw, var(--sp-16)) var(--sp-6);
       background: var(--color-surface);
-      border: 1px solid rgba(42,171,238,.2);
+      border: 1px solid rgba(42, 171, 238, .2);
       border-radius: var(--r-2xl);
-      box-shadow: var(--shadow-md), 0 0 60px rgba(42,171,238,.07);
-      position: relative; overflow: hidden;
+      box-shadow: var(--shadow-md), 0 0 60px rgba(42, 171, 238, .07);
+      position: relative;
+      overflow: hidden;
     }
+
     .final-cta__inner::before {
-      content: ''; position: absolute; inset: 0;
-      background: radial-gradient(ellipse at 50% 100%, rgba(42,171,238,.08) 0%, transparent 70%);
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse at 50% 100%, rgba(42, 171, 238, .08) 0%, transparent 70%);
       pointer-events: none;
     }
-    .final-cta__title { font-size: var(--text-2xl); font-weight: 800; color: var(--color-text); letter-spacing: -.02em; }
-    .final-cta__sub { font-size: var(--text-lg); color: var(--color-muted); line-height: 1.65; max-width: 60ch; }
-    .final-cta__form {
-      display: flex; gap: var(--sp-3); width: 100%; max-width: 520px;
-      flex-wrap: wrap; justify-content: center; position: relative; z-index: 1;
+
+    .final-cta__title {
+      font-size: var(--text-2xl);
+      font-weight: 800;
+      color: var(--color-text);
+      letter-spacing: -.02em;
     }
+
+    .final-cta__sub {
+      font-size: var(--text-lg);
+      color: var(--color-muted);
+      line-height: 1.65;
+      max-width: 60ch;
+    }
+
+    .final-cta__form {
+      display: flex;
+      gap: var(--sp-3);
+      width: 100%;
+      max-width: 520px;
+      flex-wrap: wrap;
+      justify-content: center;
+      position: relative;
+      z-index: 1;
+    }
+
     .final-cta__input {
-      flex: 1; min-width: 240px; padding: var(--sp-4) var(--sp-5);
-      background: var(--color-bg2); border: 1.5px solid var(--color-border);
-      border-radius: var(--r-full); font-size: var(--text-base); color: var(--color-text);
-      outline: none; font-family: var(--font);
+      flex: 1;
+      min-width: 240px;
+      padding: var(--sp-4) var(--sp-5);
+      background: var(--color-bg2);
+      border: 1.5px solid var(--color-border);
+      border-radius: var(--r-full);
+      font-size: var(--text-base);
+      color: var(--color-text);
+      outline: none;
+      font-family: var(--font);
       transition: border-color var(--t-ui), box-shadow var(--t-ui);
     }
-    .final-cta__input::placeholder { color: var(--color-faint); }
-    .final-cta__input:focus { border-color: var(--color-primary); box-shadow: 0 0 0 3px var(--color-primary-bg); }
+
+    .final-cta__input::placeholder {
+      color: var(--color-faint);
+    }
+
+    .final-cta__input:focus {
+      border-color: var(--color-primary);
+      box-shadow: 0 0 0 3px var(--color-primary-bg);
+    }
 
     /* --- HERO: список выгод --- */
-    .hero__benefits { display: flex; flex-direction: column; gap: var(--sp-2); margin-top: var(--sp-2); }
-    .hero__benefit {
-      display: flex; align-items: center; gap: var(--sp-2);
-      font-size: var(--text-sm); color: var(--color-muted);
+    .hero__benefits {
+      display: flex;
+      flex-direction: column;
+      gap: var(--sp-2);
+      margin-top: var(--sp-2);
     }
-    .hero__benefit svg { color: #16a34a; flex-shrink: 0; }
+
+    .hero__benefit {
+      display: flex;
+      align-items: center;
+      gap: var(--sp-2);
+      font-size: var(--text-sm);
+      color: var(--color-muted);
+    }
+
+    .hero__benefit svg {
+      color: #16a34a;
+      flex-shrink: 0;
+    }
 
     /* --- АДАПТИВ --- */
     @media (max-width: 860px) {
-      .segments__grid { grid-template-columns: 1fr; }
-      .myths__grid { grid-template-columns: 1fr; }
-      .pricing__grid { grid-template-columns: 1fr; gap: var(--sp-8); }
+      .segments__grid {
+        grid-template-columns: 1fr;
+      }
+
+      .myths__grid {
+        grid-template-columns: 1fr;
+      }
+
+      .pricing__grid {
+        grid-template-columns: 1fr;
+        gap: var(--sp-8);
+      }
     }
   </style>
 </head>
@@ -349,7 +692,8 @@
               d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42" />
           </svg>
         </button>
-        <a href="https://t.me/target_sirens" target="_blank" rel="noopener" class="btn btn--primary btn--sm nav__cta">Рассчитать бюджет</a>
+        <a href="https://t.me/target_sirens" target="_blank" rel="noopener"
+          class="btn btn--primary btn--sm nav__cta">Рассчитать бюджет</a>
       </div>
 
       <button class="burger" aria-label="Меню" aria-expanded="false">
@@ -384,24 +728,35 @@
       <div class="container hero__inner">
         <div class="hero__content">
           <h1 class="hero__title fade-up" style="--d:0ms">
-            Официальная реклама в Telegram Ads для вашего бизнеса: целевые подписчики и заявки <span class="hero__title-accent">от 30 рублей</span>
+            Официальная реклама в Telegram Ads для вашего бизнеса: целевые подписчики и заявки <span
+              class="hero__title-accent">от 30 рублей</span>
           </h1>
 
           <p class="hero__sub fade-up" style="--d:100ms">
-            Приведем окупаемый трафик из каналов ваших конкурентов за 3 дня. Берем на себя всю рутину: маркировку рекламы, написание креативов и прохождение сложной модерации с первой попытки.
+            Приведем окупаемый трафик из каналов ваших конкурентов за 3 дня. Берем на себя всю рутину: маркировку
+            рекламы, написание креативов и прохождение сложной модерации с первой попытки.
           </p>
 
           <div class="hero__benefits fade-up" style="--d:150ms">
             <span class="hero__benefit">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="20 6 9 17 4 12" />
+              </svg>
               Маркировка рекламы и отчётность в ОРД/ЕРИР
             </span>
             <span class="hero__benefit">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="20 6 9 17 4 12" />
+              </svg>
               Прохождение модерации с первой попытки
             </span>
             <span class="hero__benefit">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="20 6 9 17 4 12" />
+              </svg>
               Окупаемый трафик из каналов конкурентов за 3 дня
             </span>
           </div>
@@ -449,8 +804,10 @@
               </div>
             </div>
           </div>
-          <div class="fstat fstat--2"><span class="fstat__num">3 дня</span><span class="fstat__lbl">до трафика</span></div>
-          <div class="fstat fstat--3"><span class="fstat__num">30₽</span><span class="fstat__lbl">от / заявка</span></div>
+          <div class="fstat fstat--2"><span class="fstat__num">3 дня</span><span class="fstat__lbl">до трафика</span>
+          </div>
+          <div class="fstat fstat--3"><span class="fstat__num">30₽</span><span class="fstat__lbl">от / заявка</span>
+          </div>
         </div>
       </div>
     </section>
@@ -473,45 +830,60 @@
           <!-- Инфобизнес -->
           <div class="segment-card reveal" style="--rd:0ms">
             <div class="segment-card__icon">
-              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/>
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"
+                stroke-linecap="round" stroke-linejoin="round">
+                <path d="M22 10v6M2 10l10-5 10 5-10 5z" />
+                <path d="M6 12v5c3 3 9 3 12 0v-5" />
               </svg>
             </div>
             <h3>Инфобизнес и эксперты</h3>
-            <p>Быстрые и дешевые регистрации на вебинары/марафоны, окупаемые автоворонки и привлечение целевых, «читающих» подписчиков в экспертные каналы. Снижаем стоимость лида в 2-3 раза по сравнению с Яндекс.Директом.</p>
+            <p>Быстрые и дешевые регистрации на вебинары/марафоны, окупаемые автоворонки и привлечение целевых,
+              «читающих» подписчиков в экспертные каналы. Снижаем стоимость лида в 2-3 раза по сравнению с
+              Яндекс.Директом.</p>
           </div>
 
           <!-- E-commerce -->
           <div class="segment-card reveal" style="--rd:80ms">
             <div class="segment-card__icon">
-              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-                <circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/>
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"
+                stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="9" cy="21" r="1" />
+                <circle cx="20" cy="21" r="1" />
+                <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6" />
               </svg>
             </div>
             <h3>E-commerce и бренды</h3>
-            <p>Прямые продажи товаров и услуг через интерактивных чат-ботов. Эффективный перелив теплого трафика на ваш сайт, маркетплейсы (Wildberries/Ozon) или мини-приложения (WebApps) прямо внутри Telegram.</p>
+            <p>Прямые продажи товаров и услуг через интерактивных чат-ботов. Эффективный перелив теплого трафика на ваш
+              сайт, маркетплейсы (Wildberries/Ozon) или мини-приложения (WebApps) прямо внутри Telegram.</p>
           </div>
 
           <!-- Недвижимость / B2B -->
           <div class="segment-card reveal" style="--rd:160ms">
             <div class="segment-card__icon">
-              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M3 21h18M5 21V7l8-4v18M19 21V11l-6-4"/><path d="M9 9v.01M9 12v.01M9 15v.01M9 18v.01"/>
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"
+                stroke-linecap="round" stroke-linejoin="round">
+                <path d="M3 21h18M5 21V7l8-4v18M19 21V11l-6-4" />
+                <path d="M9 9v.01M9 12v.01M9 15v.01M9 18v.01" />
               </svg>
             </div>
             <h3>Недвижимость и B2B-услуги</h3>
-            <p>Генерация квалифицированных лидов с высоким чеком. Прогрев аудитории через экспертный контент в канале и автоматические цепочки касаний. Ваши менеджеры будут получать заявки от клиентов, которые уже доверяют вам.</p>
+            <p>Генерация квалифицированных лидов с высоким чеком. Прогрев аудитории через экспертный контент в канале и
+              автоматические цепочки касаний. Ваши менеджеры будут получать заявки от клиентов, которые уже доверяют
+              вам.</p>
           </div>
 
           <!-- Крипта / Web3 -->
           <div class="segment-card reveal" style="--rd:240ms">
             <div class="segment-card__icon">
-              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-                <circle cx="12" cy="12" r="10"/><path d="M9.5 8.5h4a2 2 0 0 1 0 4h-4zM9.5 12.5h4.5a2 2 0 0 1 0 4H9.5zM10 6.5v11M13 5.5v2M13 16.5v2"/>
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"
+                stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="10" />
+                <path d="M9.5 8.5h4a2 2 0 0 1 0 4h-4zM9.5 12.5h4.5a2 2 0 0 1 0 4H9.5zM10 6.5v11M13 5.5v2M13 16.5v2" />
               </svg>
             </div>
             <h3>Крипта и Web3</h3>
-            <p>Ювелирный обход жесткой модерации Telegram. Привлечение активных инвесторов, трейдеров и комьюнити в ваши проекты без риска блокировки канала.</p>
+            <p>Ювелирный обход жесткой модерации Telegram. Привлечение активных инвесторов, трейдеров и комьюнити в ваши
+              проекты без риска блокировки канала.</p>
           </div>
 
         </div>
@@ -534,15 +906,22 @@
           <div class="myth-card reveal" style="--rd:0ms">
             <div class="myth-card__head">
               <div class="myth-card__icon">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <line x1="18" y1="6" x2="6" y2="18" />
+                  <line x1="6" y1="6" x2="18" y2="18" />
+                </svg>
               </div>
               <p class="myth-card__myth">Миф 1: «Там огромный порог входа, нужно сразу вкладывать 1500$»</p>
             </div>
             <div class="myth-card__sol">
               <div class="myth-card__sol-icon">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                  stroke-linecap="round" stroke-linejoin="round">
+                  <polyline points="20 6 9 17 4 12" />
+                </svg>
               </div>
-              <p><strong>Решение:</strong> запускаем официальные тестовые кампании с бюджетом от 15 000 рублей через наш агентский партнёрский кабинет. Вам не нужно морозить крупные суммы.</p>
+              <p><strong>Решение:</strong> запускаем официальные тестовые кампании с бюджетом от 15 000 рублей через наш
+                агентский партнёрский кабинет. Вам не нужно морозить крупные суммы.</p>
             </div>
           </div>
 
@@ -550,15 +929,23 @@
           <div class="myth-card reveal" style="--rd:80ms">
             <div class="myth-card__head">
               <div class="myth-card__icon">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <line x1="18" y1="6" x2="6" y2="18" />
+                  <line x1="6" y1="6" x2="18" y2="18" />
+                </svg>
               </div>
               <p class="myth-card__myth">Миф 2: «Мой канал забанят, модерацию пройти нереально»</p>
             </div>
             <div class="myth-card__sol">
               <div class="myth-card__sol-icon">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                  stroke-linecap="round" stroke-linejoin="round">
+                  <polyline points="20 6 9 17 4 12" />
+                </svg>
               </div>
-              <p><strong>Решение:</strong> мы знаем более 120 нюансов правил жёсткой модерации Telegram. Перед загрузкой проводим полный аудит вашего канала, доводим тексты до стандартов площадки и сами проходим объявления перед допуском.</p>
+              <p><strong>Решение:</strong> мы знаем более 120 нюансов правил жёсткой модерации Telegram. Перед загрузкой
+                проводим полный аудит вашего канала, доводим тексты до стандартов площадки и сами проходим объявления
+                перед допуском.</p>
             </div>
           </div>
 
@@ -566,15 +953,22 @@
           <div class="myth-card reveal" style="--rd:160ms">
             <div class="myth-card__head">
               <div class="myth-card__icon">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <line x1="18" y1="6" x2="6" y2="18" />
+                  <line x1="6" y1="6" x2="18" y2="18" />
+                </svg>
               </div>
               <p class="myth-card__myth">Миф 3: «Я боюсь огромных штрафов за маркировку рекламы»</p>
             </div>
             <div class="myth-card__sol">
               <div class="myth-card__sol-icon">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                  stroke-linecap="round" stroke-linejoin="round">
+                  <polyline points="20 6 9 17 4 12" />
+                </svg>
               </div>
-              <p><strong>Решение:</strong> полностью берём на себя отчётность перед ОРД и ЕРИР. Каждое объявление автоматически промаркировано. Вы спите спокойно — юридически чисто, за нами.</p>
+              <p><strong>Решение:</strong> полностью берём на себя отчётность перед ОРД и ЕРИР. Каждое объявление
+                автоматически промаркировано. Вы спите спокойно — юридически чисто, за нами.</p>
             </div>
           </div>
 
@@ -582,15 +976,23 @@
           <div class="myth-card reveal" style="--rd:240ms">
             <div class="myth-card__head">
               <div class="myth-card__icon">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <line x1="18" y1="6" x2="6" y2="18" />
+                  <line x1="6" y1="6" x2="18" y2="18" />
+                </svg>
               </div>
               <p class="myth-card__myth">Миф 4: «Конкуренты сольют мой бюджет, а боты съедят деньги»</p>
             </div>
             <div class="myth-card__sol">
               <div class="myth-card__sol-icon">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                  stroke-linecap="round" stroke-linejoin="round">
+                  <polyline points="20 6 9 17 4 12" />
+                </svg>
               </div>
-              <p><strong>Решение:</strong> в Telegram Ads нет кликов — оплата только за показы аудитории. А наша система минусации каналов с ботами защищает показы: ваш бюджет тратится только на живых людей, читающих вручную.</p>
+              <p><strong>Решение:</strong> в Telegram Ads нет кликов — оплата только за показы аудитории. А наша система
+                минусации каналов с ботами защищает показы: ваш бюджет тратится только на живых людей, читающих вручную.
+              </p>
             </div>
           </div>
 
@@ -612,7 +1014,9 @@
         </div>
 
         <div class="quiz__box reveal">
-          <div class="quiz__progress"><div class="quiz__progress-bar" id="quiz-bar"></div></div>
+          <div class="quiz__progress">
+            <div class="quiz__progress-bar" id="quiz-bar"></div>
+          </div>
           <div class="quiz__inner">
 
             <!-- Шаг 1 -->
@@ -620,10 +1024,12 @@
               <div class="quiz__count">Шаг 1 из 4</div>
               <div class="quiz__q">Какая у вас ниша / направление бизнеса?</div>
               <div class="quiz__options">
-                <button class="quiz__opt" data-next="2"><span class="quiz__opt-radio"></span>Инфобизнес / Онлайн-школа</button>
+                <button class="quiz__opt" data-next="2"><span class="quiz__opt-radio"></span>Инфобизнес /
+                  Онлайн-школа</button>
                 <button class="quiz__opt" data-next="2"><span class="quiz__opt-radio"></span>Услуги (B2B / B2C)</button>
                 <button class="quiz__opt" data-next="2"><span class="quiz__opt-radio"></span>Недвижимость</button>
-                <button class="quiz__opt" data-next="2"><span class="quiz__opt-radio"></span>Интернет-магазин / Товарка</button>
+                <button class="quiz__opt" data-next="2"><span class="quiz__opt-radio"></span>Интернет-магазин /
+                  Товарка</button>
                 <button class="quiz__opt" data-next="2"><span class="quiz__opt-radio"></span>Другое</button>
               </div>
             </div>
@@ -633,12 +1039,18 @@
               <div class="quiz__count">Шаг 2 из 4</div>
               <div class="quiz__q">Какая главная цель рекламной кампании?</div>
               <div class="quiz__options">
-                <button class="quiz__opt" data-next="3"><span class="quiz__opt-radio"></span>Привести подписчиков в Telegram-канал</button>
-                <button class="quiz__opt" data-next="3"><span class="quiz__opt-radio"></span>Получить заявки на сайт / в CRM</button>
-                <button class="quiz__opt" data-next="3"><span class="quiz__opt-radio"></span>Набрать регистрации в чат-боте</button>
+                <button class="quiz__opt" data-next="3"><span class="quiz__opt-radio"></span>Привести подписчиков в
+                  Telegram-канал</button>
+                <button class="quiz__opt" data-next="3"><span class="quiz__opt-radio"></span>Получить заявки на сайт / в
+                  CRM</button>
+                <button class="quiz__opt" data-next="3"><span class="quiz__opt-radio"></span>Набрать регистрации в
+                  чат-боте</button>
               </div>
               <a href="#" class="quiz__back" data-back="1">
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><polyline points="15 18 9 12 15 6"/></svg>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                  stroke-linecap="round">
+                  <polyline points="15 18 9 12 15 6" />
+                </svg>
                 Назад
               </a>
             </div>
@@ -649,11 +1061,15 @@
               <div class="quiz__q">Какой рекламный бюджет вы готовы выделить на тест?</div>
               <div class="quiz__options">
                 <button class="quiz__opt" data-next="4"><span class="quiz__opt-radio"></span>До 30 000 руб.</button>
-                <button class="quiz__opt" data-next="4"><span class="quiz__opt-radio"></span>От 30 000 до 100 000 руб.</button>
+                <button class="quiz__opt" data-next="4"><span class="quiz__opt-radio"></span>От 30 000 до 100 000
+                  руб.</button>
                 <button class="quiz__opt" data-next="4"><span class="quiz__opt-radio"></span>Более 100 000 руб.</button>
               </div>
               <a href="#" class="quiz__back" data-back="2">
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><polyline points="15 18 9 12 15 6"/></svg>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                  stroke-linecap="round">
+                  <polyline points="15 18 9 12 15 6" />
+                </svg>
                 Назад
               </a>
             </div>
@@ -662,16 +1078,23 @@
             <div class="quiz__step" data-step="4">
               <div class="quiz__count">Шаг 4 из 4</div>
               <div class="quiz__q">Куда прислать готовый расчёт?</div>
-              <p class="quiz__final-lead">Укажите ваш Telegram-аккаунт (например, @username) или телефон — и наш алгоритм пришлёт готовый медиаплан со стратегией обхода конкурентов.</p>
+              <p class="quiz__final-lead">Укажите ваш Telegram-аккаунт (например, @username) или телефон — и наш
+                алгоритм пришлёт готовый медиаплан со стратегией обхода конкурентов.</p>
               <form class="quiz__form" id="quiz-form">
-                <input class="quiz__input" id="quiz-contact" type="text" placeholder="@username в Telegram или телефон" required>
+                <input class="quiz__input" id="quiz-contact" type="text" placeholder="@username в Telegram или телефон"
+                  required>
                 <button type="submit" class="btn btn--primary btn--lg btn--tg btn--glow" id="quiz-submit">
-                  <svg width="19" height="19" viewBox="0 0 24 24" fill="currentColor"><path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/></svg>
+                  <svg width="19" height="19" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z" />
+                  </svg>
                   Получить готовый медиаплан + стратегию обхода конкурентов
                 </button>
               </form>
               <a href="#" class="quiz__back" data-back="3">
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><polyline points="15 18 9 12 15 6"/></svg>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                  stroke-linecap="round">
+                  <polyline points="15 18 9 12 15 6" />
+                </svg>
                 Назад
               </a>
             </div>
@@ -680,10 +1103,14 @@
             <div class="quiz__step" data-step="success">
               <div class="quiz__success">
                 <div class="quiz__success-icon">
-                  <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                  <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="20 6 9 17 4 12" />
+                  </svg>
                 </div>
                 <h3>Заявка принята!</h3>
-                <p>Мы рассчитаем медиаплан под ваши цели и пришлём его вместе со стратегией обхода конкурентов в течение 15 минут.</p>
+                <p>Мы рассчитаем медиаплан под ваши цели и пришлём его вместе со стратегией обхода конкурентов в течение
+                  15 минут.</p>
               </div>
             </div>
 
@@ -707,11 +1134,17 @@
 
         <div class="cases__nav">
           <button class="cases__arrow cases__arrow--prev" id="cases-prev" aria-label="Назад">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><polyline points="15 18 9 12 15 6"/></svg>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+              stroke-linecap="round">
+              <polyline points="15 18 9 12 15 6" />
+            </svg>
           </button>
           <div class="cases__dots" id="cases-dots"></div>
           <button class="cases__arrow cases__arrow--next" id="cases-next" aria-label="Вперёд">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><polyline points="9 18 15 12 9 6"/></svg>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+              stroke-linecap="round">
+              <polyline points="9 18 15 12 9 6" />
+            </svg>
           </button>
         </div>
 
@@ -722,7 +1155,10 @@
             <div class="case-card__tag">Telegram Ads</div>
             <div class="case-card__head">
               <div class="case-card__ava">
-                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                  <line x1="12" y1="1" x2="12" y2="23" />
+                  <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6" />
+                </svg>
               </div>
               <div>
                 <div class="case-card__niche">Онлайн-школа инвестиций и финансов</div>
@@ -730,21 +1166,28 @@
               </div>
             </div>
             <div class="case-card__stats">
-              <div class="case-stat"><span class="case-stat__val">0.8$</span><span class="case-stat__key">цена подписчика</span></div>
-              <div class="case-stat"><span class="case-stat__val">+34%</span><span class="case-stat__key">конверсия в покупку</span></div>
-              <div class="case-stat"><span class="case-stat__val">320%</span><span class="case-stat__key">ROI кампании</span></div>
+              <div class="case-stat"><span class="case-stat__val">0.8$</span><span class="case-stat__key">цена
+                  подписчика</span></div>
+              <div class="case-stat"><span class="case-stat__val">+34%</span><span class="case-stat__key">конверсия в
+                  покупку</span></div>
+              <div class="case-stat"><span class="case-stat__val">320%</span><span class="case-stat__key">ROI
+                  кампании</span></div>
             </div>
             <div class="case-card__desc">
-              <p class="case-card__desc-title"><strong>Было:</strong> реклама через Яндекс.Директ, подписчик в канал обходился в $5, аудитория «холодная» и плохо покупала основной продукт.</p>
+              <p class="case-card__desc-title"><strong>Было:</strong> реклама через Яндекс.Директ, подписчик в канал
+                обходился в $5, аудитория «холодная» и плохо покупала основной продукт.</p>
               <ul class="case-card__list" style="margin-top:var(--sp-3)">
-                <li><strong>Что сделали:</strong> спарсили 40 крупнейших каналов конкурентов по экономике и инвестициям</li>
+                <li><strong>Что сделали:</strong> спарсили 40 крупнейших каналов конкурентов по экономике и инвестициям
+                </li>
                 <li>написали 15 точечных офферов без кликбейта</li>
                 <li>отрегулировали ставки</li>
                 <li><strong>Стало:</strong> привели 4 500 целевых подписчиков всего по 0.8$</li>
               </ul>
             </div>
             <a href="https://t.me/target_sirens" target="_blank" rel="noopener" class="case-card__link">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/></svg>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z" />
+              </svg>
               Посмотреть разбор в TG
             </a>
           </article>
@@ -754,7 +1197,10 @@
             <div class="case-card__tag">Telegram Ads</div>
             <div class="case-card__head">
               <div class="case-card__ava">
-                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="1" y="3" width="15" height="13" rx="2"/><path d="M16 8h4a2 2 0 0 1 2 2v6a2 2 0 0 1-2 2h-1l-3 3v-3H8a2 2 0 0 1-2-2v-1"/></svg>
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                  <rect x="1" y="3" width="15" height="13" rx="2" />
+                  <path d="M16 8h4a2 2 0 0 1 2 2v6a2 2 0 0 1-2 2h-1l-3 3v-3H8a2 2 0 0 1-2-2v-1" />
+                </svg>
               </div>
               <div>
                 <div class="case-card__niche">Международная логистика</div>
@@ -762,15 +1208,22 @@
               </div>
             </div>
             <div class="case-card__stats">
-              <div class="case-stat"><span class="case-stat__val">2.5€</span><span class="case-stat__key">цена подписчика</span></div>
-              <div class="case-stat"><span class="case-stat__val">2×</span><span class="case-stat__key">эффективность</span></div>
-              <div class="case-stat"><span class="case-stat__val">40%</span><span class="case-stat__key">экономия</span></div>
+              <div class="case-stat"><span class="case-stat__val">2.5€</span><span class="case-stat__key">цена
+                  подписчика</span></div>
+              <div class="case-stat"><span class="case-stat__val">2×</span><span
+                  class="case-stat__key">эффективность</span></div>
+              <div class="case-stat"><span class="case-stat__val">40%</span><span class="case-stat__key">экономия</span>
+              </div>
             </div>
             <div class="case-card__desc">
-              <p class="case-card__desc-title">РК в Telegram Ads для B2B-ниши: доставка из Китая — лёгкие креативы, таргет по ВЭД-сообществам, стабильный поток целевых подписчиков (импортеры, закупщики, владельцы бизнеса) по цене в 2 раза ниже рынка.</p>
+              <p class="case-card__desc-title">РК в Telegram Ads для B2B-ниши: доставка из Китая — лёгкие креативы,
+                таргет по ВЭД-сообществам, стабильный поток целевых подписчиков (импортеры, закупщики, владельцы
+                бизнеса) по цене в 2 раза ниже рынка.</p>
             </div>
             <a href="https://t.me/target_sirens/78" target="_blank" rel="noopener" class="case-card__link">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/></svg>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z" />
+              </svg>
               Посмотреть разбор в TG
             </a>
           </article>
@@ -780,7 +1233,10 @@
             <div class="case-card__tag">Telegram Ads</div>
             <div class="case-card__head">
               <div class="case-card__ava">
-                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M20.38 8.57l-1.23 1.85a8 8 0 0 1-.22 7.58H5.07A8 8 0 0 1 15.58 6.85l1.85-1.23A10 10 0 0 0 3.35 19a2 2 0 0 0 1.72 1h13.85a2 2 0 0 0 1.74-1 10 10 0 0 0 .27-10.44z"/></svg>
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                  <path
+                    d="M20.38 8.57l-1.23 1.85a8 8 0 0 1-.22 7.58H5.07A8 8 0 0 1 15.58 6.85l1.85-1.23A10 10 0 0 0 3.35 19a2 2 0 0 0 1.72 1h13.85a2 2 0 0 0 1.74-1 10 10 0 0 0 .27-10.44z" />
+                </svg>
               </div>
               <div>
                 <div class="case-card__niche">Одежда и аксессуары</div>
@@ -788,15 +1244,21 @@
               </div>
             </div>
             <div class="case-card__stats">
-              <div class="case-stat"><span class="case-stat__val">1.5€</span><span class="case-stat__key">цена подписчика</span></div>
-              <div class="case-stat"><span class="case-stat__val">1.9%</span><span class="case-stat__key">средний CTR</span></div>
-              <div class="case-stat"><span class="case-stat__val">534</span><span class="case-stat__key">подписчиков</span></div>
+              <div class="case-stat"><span class="case-stat__val">1.5€</span><span class="case-stat__key">цена
+                  подписчика</span></div>
+              <div class="case-stat"><span class="case-stat__val">1.9%</span><span class="case-stat__key">средний
+                  CTR</span></div>
+              <div class="case-stat"><span class="case-stat__val">534</span><span
+                  class="case-stat__key">подписчиков</span></div>
             </div>
             <div class="case-card__desc">
-              <p class="case-card__desc-title">Запуск на 802€ для бренда одежды. Таргет на эстетичные микро-блоги и каналы стилистов. Добились CTR в 2.5 раза выше рынка (рыночный CTR ~0.5–0.8%).</p>
+              <p class="case-card__desc-title">Запуск на 802€ для бренда одежды. Таргет на эстетичные микро-блоги и
+                каналы стилистов. Добились CTR в 2.5 раза выше рынка (рыночный CTR ~0.5–0.8%).</p>
             </div>
             <a href="https://t.me/target_sirens/74" target="_blank" rel="noopener" class="case-card__link">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/></svg>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z" />
+              </svg>
               Посмотреть разбор в TG
             </a>
           </article>
@@ -819,7 +1281,10 @@
 
           <div class="step step--active reveal" style="--rd:0ms" data-step="1">
             <div class="step__connector" aria-hidden="true">
-              <svg viewBox="0 0 60 24" fill="none"><path d="M0 12 Q30 0 60 12" stroke="var(--color-primary)" stroke-width="1.5" stroke-dasharray="4 3"/><polygon points="54,8 60,12 54,16" fill="var(--color-primary)"/></svg>
+              <svg viewBox="0 0 60 24" fill="none">
+                <path d="M0 12 Q30 0 60 12" stroke="var(--color-primary)" stroke-width="1.5" stroke-dasharray="4 3" />
+                <polygon points="54,8 60,12 54,16" fill="var(--color-primary)" />
+              </svg>
             </div>
             <div class="step__inner">
               <div class="step__num">01</div>
@@ -836,7 +1301,10 @@
 
           <div class="step reveal" style="--rd:120ms" data-step="2">
             <div class="step__connector" aria-hidden="true">
-              <svg viewBox="0 0 60 24" fill="none"><path d="M0 12 Q30 0 60 12" stroke="var(--color-primary)" stroke-width="1.5" stroke-dasharray="4 3"/><polygon points="54,8 60,12 54,16" fill="var(--color-primary)"/></svg>
+              <svg viewBox="0 0 60 24" fill="none">
+                <path d="M0 12 Q30 0 60 12" stroke="var(--color-primary)" stroke-width="1.5" stroke-dasharray="4 3" />
+                <polygon points="54,8 60,12 54,16" fill="var(--color-primary)" />
+              </svg>
             </div>
             <div class="step__inner">
               <div class="step__num">02</div>
@@ -853,7 +1321,10 @@
 
           <div class="step reveal" style="--rd:240ms" data-step="3">
             <div class="step__connector" aria-hidden="true">
-              <svg viewBox="0 0 60 24" fill="none"><path d="M0 12 Q30 0 60 12" stroke="var(--color-primary)" stroke-width="1.5" stroke-dasharray="4 3"/><polygon points="54,8 60,12 54,16" fill="var(--color-primary)"/></svg>
+              <svg viewBox="0 0 60 24" fill="none">
+                <path d="M0 12 Q30 0 60 12" stroke="var(--color-primary)" stroke-width="1.5" stroke-dasharray="4 3" />
+                <polygon points="54,8 60,12 54,16" fill="var(--color-primary)" />
+              </svg>
             </div>
             <div class="step__inner">
               <div class="step__num">03</div>
@@ -910,7 +1381,8 @@
               <li>Управление бюджетом до 500€</li>
             </ul>
             <div class="price-card__price">29 000 руб. <span>/ мес.</span></div>
-            <a href="https://t.me/target_sirens" target="_blank" rel="noopener" class="btn btn--primary btn--lg" style="width:100%">Выбрать тариф</a>
+            <a href="https://t.me/target_sirens" target="_blank" rel="noopener" class="btn btn--primary btn--lg"
+              style="width:100%">Выбрать тариф</a>
           </div>
 
           <!-- Бизнес (популярный) -->
@@ -926,7 +1398,8 @@
               <li>Управление бюджетом до 2500€</li>
             </ul>
             <div class="price-card__price">49 000 руб. <span>/ мес.</span></div>
-            <a href="https://t.me/target_sirens" target="_blank" rel="noopener" class="btn btn--primary btn--lg btn--tg btn--glow" style="width:100%">Выбрать самый популярный</a>
+            <a href="https://t.me/target_sirens" target="_blank" rel="noopener"
+              class="btn btn--primary btn--lg btn--tg btn--glow" style="width:100%">Выбрать самый популярный</a>
           </div>
 
           <!-- VIP -->
@@ -941,7 +1414,8 @@
               <li>Бюджет от 2500€+</li>
             </ul>
             <div class="price-card__price">По запросу <span>(фикс + % от бюджета)</span></div>
-            <a href="https://t.me/target_sirens" target="_blank" rel="noopener" class="btn btn--primary btn--lg" style="width:100%">Обсудить условия</a>
+            <a href="https://t.me/target_sirens" target="_blank" rel="noopener" class="btn btn--primary btn--lg"
+              style="width:100%">Обсудить условия</a>
           </div>
 
         </div>
@@ -963,25 +1437,43 @@
           <details class="faq-item">
             <summary class="faq-item__q">
               Можно ли запускать рекламу, если у меня нет Telegram-канала, а только внешний сайт?
-              <span class="faq-item__icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span>
+              <span class="faq-item__icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"
+                  stroke="currentColor" stroke-width="2.5" stroke-linecap="round">
+                  <line x1="12" y1="5" x2="12" y2="19" />
+                  <line x1="5" y1="12" x2="19" y2="12" />
+                </svg></span>
             </summary>
-            <div class="faq-item__a">Да, официальный кабинет Telegram Ads позволяет вести трафик напрямую на внешние сайты. Главное — правильно настроить UTM-метки, чтобы вы видели окупаемость каждого вложенного рубля. Мы полностью настроим этот процесс.</div>
+            <div class="faq-item__a">Да, официальный кабинет Telegram Ads позволяет вести трафик напрямую на внешние
+              сайты. Главное — правильно настроить UTM-метки, чтобы вы видели окупаемость каждого вложенного рубля. Мы
+              полностью настроим этот процесс.</div>
           </details>
 
           <details class="faq-item">
             <summary class="faq-item__q">
               Как происходит оплата и выдаются ли закрывающие документы?
-              <span class="faq-item__icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span>
+              <span class="faq-item__icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"
+                  stroke="currentColor" stroke-width="2.5" stroke-linecap="round">
+                  <line x1="12" y1="5" x2="12" y2="19" />
+                  <line x1="5" y1="12" x2="19" y2="12" />
+                </svg></span>
             </summary>
-            <div class="faq-item__a">Мы работаем официально по договору. Оплата производится на расчетный счет. По окончании каждого отчетного периода мы предоставляем полный пакет закрывающих документов (акты) для вашей бухгалтерии и автоматически передаем данные по маркировке в ЕРИР.</div>
+            <div class="faq-item__a">Мы работаем официально по договору. Оплата производится на расчетный счет. По
+              окончании каждого отчетного периода мы предоставляем полный пакет закрывающих документов (акты) для вашей
+              бухгалтерии и автоматически передаем данные по маркировке в ЕРИР.</div>
           </details>
 
           <details class="faq-item">
             <summary class="faq-item__q">
               Сколько времени занимает прохождение модерации?
-              <span class="faq-item__icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span>
+              <span class="faq-item__icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"
+                  stroke="currentColor" stroke-width="2.5" stroke-linecap="round">
+                  <line x1="12" y1="5" x2="12" y2="19" />
+                  <line x1="5" y1="12" x2="19" y2="12" />
+                </svg></span>
             </summary>
-            <div class="faq-item__a">Первичная модерация самого канала и первых объявлений обычно занимает от 24 до 48 часов. Так как мы заранее готовим канал по чек-листу Telegram, в 90% случаев мы проходим проверку с первого раза без задержек.</div>
+            <div class="faq-item__a">Первичная модерация самого канала и первых объявлений обычно занимает от 24 до 48
+              часов. Так как мы заранее готовим канал по чек-листу Telegram, в 90% случаев мы проходим проверку с
+              первого раза без задержек.</div>
           </details>
 
         </div>
@@ -996,11 +1488,15 @@
         <div class="final-cta__inner reveal">
           <div class="section-label">Финальный шаг</div>
           <h2 class="final-cta__title">Готовы забрать клиентов у ваших конкурентов, пока они спят?</h2>
-          <p class="final-cta__sub">Оставьте ваши контакты. Наш эксперт свяжется с вами, проанализирует ваш проект и предложит 3 готовые стратегии привлечения трафика через Telegram Ads.</p>
+          <p class="final-cta__sub">Оставьте ваши контакты. Наш эксперт свяжется с вами, проанализирует ваш проект и
+            предложит 3 готовые стратегии привлечения трафика через Telegram Ads.</p>
           <form class="final-cta__form" id="final-form">
-            <input class="final-cta__input" id="final-contact" type="text" placeholder="Ваш аккаунт в Telegram (@username)" required>
+            <input class="final-cta__input" id="final-contact" type="text"
+              placeholder="Ваш аккаунт в Telegram (@username)" required>
             <button type="submit" class="btn btn--primary btn--lg btn--tg btn--glow" id="final-submit">
-              <svg width="19" height="19" viewBox="0 0 24 24" fill="currentColor"><path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/></svg>
+              <svg width="19" height="19" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z" />
+              </svg>
               Обсудить проект со специалистом
             </button>
           </form>
@@ -1033,26 +1529,39 @@
     <div class="tg-bubble" id="tg-bubble">
       <div class="tg-bubble__header">
         <div class="tg-bubble__avatar">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="white"><path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/></svg>
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="white">
+            <path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z" />
+          </svg>
         </div>
         <div>
           <div class="tg-bubble__name">Target Sirens</div>
           <div class="tg-bubble__status"><span class="tg-bubble__dot"></span>онлайн</div>
         </div>
         <button class="tg-bubble__close" id="tg-bubble-close" aria-label="Закрыть">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+            <line x1="18" y1="6" x2="6" y2="18" />
+            <line x1="6" y1="6" x2="18" y2="18" />
+          </svg>
         </button>
       </div>
       <div class="tg-bubble__body"></div>
       <button type="button" class="tg-bubble__btn" id="tg-bub">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/></svg>
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z" />
+        </svg>
         Написать в Telegram
       </button>
     </div>
 
     <button class="tg-btn" id="tg-btn" aria-label="Написать в Telegram">
-      <svg class="tg-btn__icon tg-btn__icon--tg" width="28" height="28" viewBox="0 0 24 24" fill="white"><path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/></svg>
-      <svg class="tg-btn__icon tg-btn__icon--close" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" style="display:none"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+      <svg class="tg-btn__icon tg-btn__icon--tg" width="28" height="28" viewBox="0 0 24 24" fill="white">
+        <path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z" />
+      </svg>
+      <svg class="tg-btn__icon tg-btn__icon--close" width="24" height="24" viewBox="0 0 24 24" fill="none"
+        stroke="white" stroke-width="2.5" style="display:none">
+        <line x1="18" y1="6" x2="6" y2="18" />
+        <line x1="6" y1="6" x2="18" y2="18" />
+      </svg>
       <span class="tg-btn__badge">1</span>
     </button>
   </div>
@@ -1102,11 +1611,11 @@
         const submitBtn = document.getElementById('quiz-submit');
         submitBtn.disabled = true;
 
-        const summary = `🧮 ЗАЯВКА ИЗ КВИЗА (Telegram Ads)\n` +
-          `Ниша: ${answers.step1 || '—'}\n` +
-          `Цель: ${answers.step2 || '—'}\n` +
-          `Бюджет: ${answers.step3 || '—'}\n` +
-          `Контакт: ${contact}`;
+        const summary = `📊 Новая заявка с квиза (Telegram Ads)\n\n` +
+          `🏢 Ниша: ${answers['1'] || answers.step1 || '—'}\n` +
+          `🎯 Цель: ${answers['2'] || answers.step2 || '—'}\n` +
+          `💰 Бюджет: ${answers['3'] || answers.step3 || '—'}\n\n` +
+          `📱 Контакт: ${contact}`;
 
         try {
           await fetch('send-telegram.php', {
