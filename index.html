@@ -1,18 +1,110 @@
 <!DOCTYPE html>
 <html lang="ru" data-theme="light">
+
 <head>
   <meta charset="UTF-8">
+  <!-- Google Tag Manager -->
+  <script>(function (w, d, s, l, i) {
+      w[l] = w[l] || []; w[l].push({
+        'gtm.start':
+          new Date().getTime(), event: 'gtm.js'
+      }); var f = d.getElementsByTagName(s)[0],
+        j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+          'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+    })(window, document, 'script', 'dataLayer', 'GTM-P6WTXDZZ');</script>
+  <!-- End Google Tag Manager -->
+   
+<script type="application/ld+json">
+{
+@context": "Schema.org - Schema.org ",
+@type": "Organization",
+"name": "TargetSirens",
+"url": "Target Sirens — Системный трафик ",
+"logo": "https://targetsirens.ru/logo.png",
+"image": "https://targetsirens.ru/preview-image.jpg",
+"description": "Трафик и окупаемые заявки в Telegram Ads, Yandex Direct, Авито Ads. Настройка рекламы под ключ в Минске, Москве и по всему СНГ.",
+"knowsAbout": "Настройка рекламы, маркетинг, Telegram Ads, Yandex Direct, Авито Ads",
+
+// Основной адрес (Минск)
+"address": {
+@type": "PostalAddress",
+"addressLocality": "Минск",
+"addressCountry": "BY"
+},
+
+// Координаты (Минск)
+"geo": {
+@type": "GeoCoordinates",
+"latitude": "53.9045",
+"longitude": "27.5615"
+},
+
+// ЗОНА ОБСЛУЖИВАНИЯ (Здесь мы добавляем Москву и СНГ)
+"areaServed": [
+{
+@type": "City",
+"name": "Минск"
+},
+{
+@type": "City",
+"name": "Москва"
+},
+{
+@type": "Country",
+"name": "СНГ"
+}
+],
+
+"foundingDate": "2024",
+"sameAs": [
+"TARGET SIRENS | Реклама TG ADS ",
+"https://vk.com/targetsirens"
+],
+"hasOfferCatalog": {
+@type": "OfferCatalog",
+"name": "Услуги маркетинга и рекламы",
+"itemListElement": [
+{
+@type": "Offer",
+"itemOffered": {
+@type": "Service",
+"name": "Настройка Telegram Ads в Москве и Минске"
+}
+},
+{
+@type": "Offer",
+"itemOffered": {
+@type": "Service",
+"name": "Настройка Яндекс Директ под ключ"
+}
+},
+{
+@type": "Offer",
+"itemOffered": {
+@type": "Service",
+"name": "Реклама на Авито Ads"
+}
+}
+]
+}
+}
+</script>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Системный трафик из Telegram Ads и Яндекс Директ. ROI от 300%. Target Sirens — маркетинг на данных.">
-  <title>Target Sirens — Системный трафик</title>
+  <meta name="description"
+    content="Трафик и окупаемые заявки в Telegram Ads, Yandex Direct, Авито Ads. Настраиваем рекламу под ключ. Получите бесплатный аудит проекта!">
+  <title>Target sirens - настройка рекламы в Telegram Ads, Yandex Direct, Авито Ads под ключ</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
   <link rel="stylesheet" href="style.css">
 </head>
-<body>
 
+<body>
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-P6WTXDZZ" height="0" width="0"
+      style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
   <!-- ==============================
        HEADER — Apple glassmorphism
        ============================== -->
@@ -23,24 +115,33 @@
       <!-- LOGO -->
       <a href="#" class="logo" aria-label="Target Sirens">
         <img class="logo__img logo__img--light" src="logo-light.svg" alt="" width="44" height="44">
-        <img class="logo__img logo__img--dark"  src="logo-dark.svg"  alt="" width="44" height="44">
+        <img class="logo__img logo__img--dark" src="logo-dark.svg" alt="" width="44" height="44">
         <span class="logo__text">Target <strong>Sirens</strong></span>
       </a>
 
       <!-- NAV -->
       <nav class="nav" aria-label="Навигация">
-        <a href="#facts"   class="nav__link">О нас</a>
+        <a href="#facts" class="nav__link">О нас</a>
         <a href="#process" class="nav__link">Как работаем</a>
-        <a href="#cases"   class="nav__link">Кейсы</a>
+        <a href="#cases" class="nav__link">Кейсы</a>
+        <a href="telegram-ads.html" class="nav__link" style="color:var(--color-primary);font-weight:600">Telegram Ads</a>
         <a href="#contact" class="nav__link">Контакты</a>
       </nav>
 
       <div class="header__right">
         <button class="theme-toggle" data-theme-toggle aria-label="Сменить тему">
-          <svg class="icon-moon" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
-          <svg class="icon-sun"  width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="display:none"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
+          <svg class="icon-moon" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+            stroke-width="2">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
+          </svg>
+          <svg class="icon-sun" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+            stroke-width="2" style="display:none">
+            <circle cx="12" cy="12" r="5" />
+            <path
+              d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42" />
+          </svg>
         </button>
-        <a href="#contact" class="btn btn--primary btn--sm nav__cta">Обсудить проект</a>
+        <a href="#contact" class="btn btn--primary btn--sm nav__cta" id="desk">Обсудить проект</a>
       </div>
 
       <button class="burger" aria-label="Меню" aria-expanded="false">
@@ -50,9 +151,10 @@
 
     <!-- Mobile nav -->
     <div class="mobile-nav" id="mobile-nav" aria-hidden="true">
-      <a href="#facts"   class="mobile-nav__link">О нас</a>
+      <a href="#facts" class="mobile-nav__link">О нас</a>
       <a href="#process" class="mobile-nav__link">Как работаем</a>
-      <a href="#cases"   class="mobile-nav__link">Кейсы</a>
+      <a href="#cases" class="mobile-nav__link">Кейсы</a>
+      <a href="telegram-ads.html" class="mobile-nav__link" style="color:var(--color-primary)">Telegram Ads</a>
       <a href="#contact" class="mobile-nav__link">Контакты</a>
       <a href="#contact" class="btn btn--primary">Обсудить проект</a>
     </div>
@@ -75,24 +177,32 @@
       <div class="container hero__inner">
         <div class="hero__content">
           <h1 class="hero__title fade-up" style="--d:0ms">
-            Системный трафик<br>и окупаемые воронки
+            Настройка рекламы в Telegram Ads, Яндекс Директ и Авито Ads под ключ
           </h1>
 
           <p class="hero__sub fade-up" style="--d:100ms">
-            Не просто «нажимаю кнопки в рекламном кабинете», а изучаю психологию вашего клиента и нахожу решение его проблемы.
+            Трафик и окупаемые заявки в Минске, Москве и по всему СНГ. Получите бесплатный аудит проекта!
           </p>
 
           <div class="hero__cta-wrap fade-up" style="--d:200ms">
-            <a href="https://t.me/target_sirens/80" target="_blank" rel="noopener" class="btn btn--primary btn--lg btn--tg btn--glow hero__btn-pdf">
-              <svg width="19" height="19" viewBox="0 0 24 24" fill="currentColor"><path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/></svg>
+            <a href="https://t.me/target_sirens/80" target="_blank" rel="noopener"
+              class="btn btn--primary btn--lg btn--tg btn--glow hero__btn-pdf" id="take">
+              <svg width="19" height="19" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z" />
+              </svg>
               Забери гайд «Трафик-апдейт 2026»
             </a>
-            <a href="https://t.me/target_sirens" target="_blank" rel="noopener" class="btn btn--primary btn--lg btn--tg btn--glow">
-              <svg width="19" height="19" viewBox="0 0 24 24" fill="currentColor"><path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/></svg>
+            <a href="https://t.me/target_sirens" target="_blank" rel="noopener"
+              class="btn btn--primary btn--lg btn--tg btn--glow" id="active">
+              <svg width="19" height="19" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z" />
+              </svg>
               Активировать стратегию окупаемости
             </a>
             <span class="hero__hint">
-              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
+              </svg>
               Откроется в приложении Telegram
             </span>
           </div>
@@ -169,44 +279,66 @@
           <!-- 1. Telegram Ads -->
           <div class="fact-card reveal" style="--rd:0ms">
             <div class="fact-card__icon">
-              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/></svg>
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)"
+                stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z" />
+              </svg>
             </div>
-            <h3>Telegram ЭДС</h3>
+            <h3>Официальная реклама в Telegram Ads</h3>
             <ul class="fact-list">
-              <li>Открытие рекламного кабинета — 250 €</li>
-              <li>Комиссия реселлера — 10%</li>
+              <li>Запуск кампаний</li>
+              <li>подбор каналов и создание конверсионных ботов</li>
               <li>Самый короткий путь к вашему клиенту</li>
             </ul>
+            <a href="telegram-ads.html" class="case-card__link" style="margin-top:auto;align-self:flex-start">
+              Подробнее о Telegram Ads
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+            </a>
           </div>
 
           <!-- 2. Яндекс Директ -->
           <div class="fact-card reveal" style="--rd:60ms">
             <div class="fact-card__icon">
-              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)"
+                stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="22 12 18 12 15 21 9 3 6 12 2 12" />
+              </svg>
             </div>
-            <h3>Яндекс Директ</h3>
+            <h3>Контекстная реклама в Яндекс Директт</h3>
             <ul class="fact-list">
-              <li>При первом запуске — бонус 30 000 ₽ (300 бел. руб.)</li>
-              <li>Бюджет на старт составит 48 000 ₽</li>
+              <li>Поиск, РСЯ и ретаргетинг</li>
+              <li>фокус на окупаемость и ROI</li>
             </ul>
           </div>
 
           <!-- 3. Авито -->
           <div class="fact-card reveal" style="--rd:120ms">
             <div class="fact-card__icon">
-              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)"
+                stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="3" y="3" width="18" height="18" rx="2" />
+                <path d="M3 9h18M9 21V9" />
+              </svg>
             </div>
-            <h3>Авито ЭДС</h3>
+            <h3>Продвижение на Авито под ключ</h3>
             <ul class="fact-list">
-              <li>60+ млн пользователей</li>
-              <li>Конверсия выше из-за готового спроса</li>
+              <li>Масспостинг</li>
+              <li>оформление магазинов</li>
+              <li>управление платным продвижением</li>
             </ul>
           </div>
 
           <!-- 4. Яндекс → Telegram -->
           <div class="fact-card reveal" style="--rd:180ms">
             <div class="fact-card__icon">
-              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg>
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)"
+                stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="18" cy="5" r="3" />
+                <circle cx="6" cy="12" r="3" />
+                <circle cx="18" cy="19" r="3" />
+                <line x1="8.59" y1="13.51" x2="15.42" y2="17.49" />
+                <line x1="15.41" y1="6.51" x2="8.59" y2="10.49" />
+              </svg>
             </div>
             <h3>Яндекс Директ → Telegram</h3>
             <ul class="fact-list">
@@ -218,7 +350,12 @@
           <!-- 5. Instagram -->
           <div class="fact-card reveal" style="--rd:240ms">
             <div class="fact-card__icon">
-              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)"
+                stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="2" y="2" width="20" height="20" rx="5" />
+                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
+              </svg>
             </div>
             <h3>Instagram*</h3>
             <ul class="fact-list">
@@ -230,9 +367,12 @@
           <!-- 6. Facebook -->
           <div class="fact-card reveal" style="--rd:300ms">
             <div class="fact-card__icon">
-              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)"
+                stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
+              </svg>
             </div>
-            <h3>Фэйсбук* ЭДС</h3>
+            <h3>Facebook* Ads</h3>
             <ul class="fact-list">
               <li>Креативы и есть ваш таргетинг</li>
               <li>Умные алгоритмы нового поколения</li>
@@ -241,6 +381,7 @@
 
         </div>
         <p class="facts__note reveal">Не знаете, что выбрать? Мы поможем!</p>
+        <p class="looter__meta-note"><strong>Также настраиваем:</strong> Рекламу в Instagram* и Facebook* Ads для зарубежных рынков.</p>
       </div>
     </section>
 
@@ -258,7 +399,10 @@
 
           <div class="step step--active reveal" style="--rd:0ms" data-step="1">
             <div class="step__connector" aria-hidden="true">
-              <svg viewBox="0 0 60 24" fill="none"><path d="M0 12 Q30 0 60 12" stroke="var(--color-primary)" stroke-width="1.5" stroke-dasharray="4 3"/><polygon points="54,8 60,12 54,16" fill="var(--color-primary)"/></svg>
+              <svg viewBox="0 0 60 24" fill="none">
+                <path d="M0 12 Q30 0 60 12" stroke="var(--color-primary)" stroke-width="1.5" stroke-dasharray="4 3" />
+                <polygon points="54,8 60,12 54,16" fill="var(--color-primary)" />
+              </svg>
             </div>
             <div class="step__inner">
               <div class="step__num">01</div>
@@ -275,7 +419,10 @@
 
           <div class="step reveal" style="--rd:120ms" data-step="2">
             <div class="step__connector" aria-hidden="true">
-              <svg viewBox="0 0 60 24" fill="none"><path d="M0 12 Q30 0 60 12" stroke="var(--color-primary)" stroke-width="1.5" stroke-dasharray="4 3"/><polygon points="54,8 60,12 54,16" fill="var(--color-primary)"/></svg>
+              <svg viewBox="0 0 60 24" fill="none">
+                <path d="M0 12 Q30 0 60 12" stroke="var(--color-primary)" stroke-width="1.5" stroke-dasharray="4 3" />
+                <polygon points="54,8 60,12 54,16" fill="var(--color-primary)" />
+              </svg>
             </div>
             <div class="step__inner">
               <div class="step__num">02</div>
@@ -293,12 +440,15 @@
 
           <div class="step reveal" style="--rd:240ms" data-step="3">
             <div class="step__connector" aria-hidden="true">
-              <svg viewBox="0 0 60 24" fill="none"><path d="M0 12 Q30 0 60 12" stroke="var(--color-primary)" stroke-width="1.5" stroke-dasharray="4 3"/><polygon points="54,8 60,12 54,16" fill="var(--color-primary)"/></svg>
+              <svg viewBox="0 0 60 24" fill="none">
+                <path d="M0 12 Q30 0 60 12" stroke="var(--color-primary)" stroke-width="1.5" stroke-dasharray="4 3" />
+                <polygon points="54,8 60,12 54,16" fill="var(--color-primary)" />
+              </svg>
             </div>
             <div class="step__inner">
               <div class="step__num">03</div>
               <div class="step__content">
-                <h3>Настройка рекламных кампаний</h3>
+                <h3>Техническая настройка рекламных кампаний</h3>
                 <ul>
                   <li>Сбор целевых каналов</li>
                   <li>Подготовка рекламных креативов</li>
@@ -314,7 +464,7 @@
             <div class="step__inner">
               <div class="step__num">04</div>
               <div class="step__content">
-                <h3>Ведение</h3>
+                <h3>Ведение, аналитика и масштабирование</h3>
                 <ul>
                   <li>Удаляем неэффективные объявления</li>
                   <li>Тестируем новые каналы и креативы</li>
@@ -334,18 +484,24 @@
     <section class="cases section" id="cases">
       <div class="container">
         <div class="section-head reveal">
-          <div class="section-label">Кейсы</div>
+          <div class="section-label">Кейсы и результаты TargetSirens</div>
           <h2 class="section-title">Результаты, подтверждённые<br>реальными цифрами</h2>
         </div>
 
         <!-- Навигация каруселя -->
         <div class="cases__nav">
           <button class="cases__arrow cases__arrow--prev" id="cases-prev" aria-label="Назад">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><polyline points="15 18 9 12 15 6"/></svg>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+              stroke-linecap="round">
+              <polyline points="15 18 9 12 15 6" />
+            </svg>
           </button>
           <div class="cases__dots" id="cases-dots"></div>
           <button class="cases__arrow cases__arrow--next" id="cases-next" aria-label="Вперёд">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><polyline points="9 18 15 12 9 6"/></svg>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+              stroke-linecap="round">
+              <polyline points="9 18 15 12 9 6" />
+            </svg>
           </button>
         </div>
 
@@ -357,7 +513,10 @@
             <div class="case-card__tag">Telegram Ads</div>
             <div class="case-card__head">
               <div class="case-card__ava">
-                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="1" y="3" width="15" height="13" rx="2"/><path d="M16 8h4a2 2 0 0 1 2 2v6a2 2 0 0 1-2 2h-1l-3 3v-3H8a2 2 0 0 1-2-2v-1"/></svg>
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                  <rect x="1" y="3" width="15" height="13" rx="2" />
+                  <path d="M16 8h4a2 2 0 0 1 2 2v6a2 2 0 0 1-2 2h-1l-3 3v-3H8a2 2 0 0 1-2-2v-1" />
+                </svg>
               </div>
               <div>
                 <div class="case-card__niche">Международная логистика</div>
@@ -365,20 +524,26 @@
               </div>
             </div>
             <div class="case-card__stats">
-              <div class="case-stat"><span class="case-stat__val">2.5€</span><span class="case-stat__key">цена подписчика</span></div>
-              <div class="case-stat"><span class="case-stat__val">2×</span><span class="case-stat__key">эффективность</span></div>
-              <div class="case-stat"><span class="case-stat__val">40%</span><span class="case-stat__key">экономия</span></div>
+              <div class="case-stat"><span class="case-stat__val">2.5€</span><span class="case-stat__key">цена
+                  подписчика</span></div>
+              <div class="case-stat"><span class="case-stat__val">2×</span><span
+                  class="case-stat__key">эффективность</span></div>
+              <div class="case-stat"><span class="case-stat__val">40%</span><span class="case-stat__key">экономия</span>
+              </div>
             </div>
             <div class="case-card__desc">
               <p class="case-card__desc-title">РК в Telegram Ads для B2B-ниши: доставка из Китая</p>
               <ul class="case-card__list">
                 <li>легкие креативы</li>
                 <li>таргет по ВЭД-сообществам</li>
-                <li>стабильный поток целевых подписчиков (импортеры, закупщики, владельцы бизнеса) по цене в 2 раза ниже рынка</li>
+                <li>стабильный поток целевых подписчиков (импортеры, закупщики, владельцы бизнеса) по цене в 2 раза ниже
+                  рынка</li>
               </ul>
             </div>
-            <a href="https://t.me/target_sirens/78" target="_blank" rel="noopener" class="case-card__link">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/></svg>
+            <a href="https://t.me/target_sirens/78" target="_blank" rel="noopener" class="case-card__link" id="case1">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z" />
+              </svg>
               Посмотреть разбор в TG
             </a>
           </article>
@@ -388,7 +553,11 @@
             <div class="case-card__tag">Telegram Ads</div>
             <div class="case-card__head">
               <div class="case-card__ava">
-                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M20.38 8.57l-1.23 1.85a8 8 0 0 1-.22 7.58H5.07A8 8 0 0 1 15.58 6.85l1.85-1.23A10 10 0 0 0 3.35 19a2 2 0 0 0 1.72 1h13.85a2 2 0 0 0 1.74-1 10 10 0 0 0 .27-10.44z"/><path d="M13.5 3a1.5 1.5 0 0 0 3 0v-1a1.5 1.5 0 0 0-3 0v1z"/></svg>
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                  <path
+                    d="M20.38 8.57l-1.23 1.85a8 8 0 0 1-.22 7.58H5.07A8 8 0 0 1 15.58 6.85l1.85-1.23A10 10 0 0 0 3.35 19a2 2 0 0 0 1.72 1h13.85a2 2 0 0 0 1.74-1 10 10 0 0 0 .27-10.44z" />
+                  <path d="M13.5 3a1.5 1.5 0 0 0 3 0v-1a1.5 1.5 0 0 0-3 0v1z" />
+                </svg>
               </div>
               <div>
                 <div class="case-card__niche">Одежда и Аксессуары</div>
@@ -396,15 +565,22 @@
               </div>
             </div>
             <div class="case-card__stats">
-              <div class="case-stat"><span class="case-stat__val">1.5€</span><span class="case-stat__key">цена подписчика</span></div>
-              <div class="case-stat"><span class="case-stat__val">1.9%</span><span class="case-stat__key">средний CTR</span></div>
-              <div class="case-stat"><span class="case-stat__val">534</span><span class="case-stat__key">привлечено подписчиков</span></div>
+              <div class="case-stat"><span class="case-stat__val">1.5€</span><span class="case-stat__key">цена
+                  подписчика</span></div>
+              <div class="case-stat"><span class="case-stat__val">1.9%</span><span class="case-stat__key">средний
+                  CTR</span></div>
+              <div class="case-stat"><span class="case-stat__val">534</span><span class="case-stat__key">привлечено
+                  подписчиков</span></div>
             </div>
             <div class="case-card__desc">
-              <p class="case-card__desc-title">Провели запуск на 802€ для бренда одежды. Использовали таргет на эстетичные микро-блоги и каналы стилистов. Добились CTR в 2.5 раза выше рынка (рыночный CTR ~0.5–0.8%).</p>
+              <p class="case-card__desc-title">Провели запуск на 802€ для бренда одежды. Использовали таргет на
+                эстетичные микро-блоги и каналы стилистов. Добились CTR в 2.5 раза выше рынка (рыночный CTR ~0.5–0.8%).
+              </p>
             </div>
-            <a href="https://t.me/target_sirens/74" target="_blank" rel="noopener" class="case-card__link">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/></svg>
+            <a href="https://t.me/target_sirens/74" target="_blank" rel="noopener" class="case-card__link" id="case2">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z" />
+              </svg>
               Посмотреть разбор в TG
             </a>
           </article>
@@ -425,9 +601,12 @@
         <div class="diag__inner reveal">
           <div class="section-label">Бесплатно</div>
           <h2 class="diag__title">Не знаете с чего начать?</h2>
-          <p class="diag__sub">Проанализируем ваш проект и подберём оптимальную стратегию</p>
-          <a href="https://t.me/target_sirens" target="_blank" rel="noopener" class="btn btn--primary btn--lg btn--tg btn--glow">
-            <svg width="19" height="19" viewBox="0 0 24 24" fill="currentColor"><path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/></svg>
+          <p class="diag__sub">Запишитесь на бесплатный аудит, и мы подберем стратегию под ваш бюджет.</p>
+          <a href="https://t.me/TargetSirens" target="_blank" rel="noopener"
+            class="btn btn--primary btn--lg btn--tg btn--glow" id="audit">
+            <svg width="19" height="19" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z" />
+            </svg>
             Записаться на аудит
           </a>
         </div>
@@ -441,7 +620,7 @@
     <div class="container footer__inner">
       <a href="#" class="logo">
         <img class="logo__img logo__img--light" src="logo-light.svg" alt="" width="44" height="44">
-        <img class="logo__img logo__img--dark"  src="logo-dark.svg"  alt="" width="44" height="44">
+        <img class="logo__img logo__img--dark" src="logo-dark.svg" alt="" width="44" height="44">
         <span class="logo__text">Target <strong>Sirens</strong></span>
       </a>
       <p class="footer__copy">© 2026 Target Sirens. Системный трафик для бизнеса.</p>
@@ -452,7 +631,10 @@
         <a href="/privacy.html" target="_blank" rel="noopener noreferrer">Политика конфиденциальности</a>
       </div>
       <a href="#" class="footer__meta-note">
-        Instagram* и Facebook* (продукт компании Meta, деятельность которой признана экстремистской и запрещена на территории РФ)</a>
+        Instagram* и Facebook* (продукт компании Meta, деятельность которой признана экстремистской и запрещена на
+        территории РФ)</a>
+        <a href="#" class="footer__meta-note">
+       Работаем с проектами в Минске, Москве и по всему миру</a>
     </div>
   </footer>
 
@@ -463,7 +645,9 @@
     <div class="tg-bubble" id="tg-bubble">
       <div class="tg-bubble__header">
         <div class="tg-bubble__avatar">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="white"><path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/></svg>
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="white">
+            <path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z" />
+          </svg>
         </div>
         <div>
           <div class="tg-bubble__name">Target Sirens</div>
@@ -472,7 +656,10 @@
           </div>
         </div>
         <button class="tg-bubble__close" id="tg-bubble-close" aria-label="Закрыть">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+            <line x1="18" y1="6" x2="6" y2="18" />
+            <line x1="6" y1="6" x2="18" y2="18" />
+          </svg>
         </button>
       </div>
       <div class="tg-bubble__body">
@@ -480,82 +667,92 @@
           Привет! 👋 Готовы обсудить ваш проект.<br>Напишите нам в Telegram — ответим в течение 15 минут.
         </div>
       </div>
-      <a href="https://t.me/target_sirens" target="_blank" rel="noopener" class="tg-bubble__btn">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/></svg>
-        Написать в Telegram
-      </a>
+      <button type="button" class="tg-bubble__btn" id="tg-bub">
+  <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+    <path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z" />
+  </svg>
+  Написать в Telegram
+</button>
     </div>
 
     <!-- Кнопка -->
     <button class="tg-btn" id="tg-btn" aria-label="Написать в Telegram">
-      <svg class="tg-btn__icon tg-btn__icon--tg" width="28" height="28" viewBox="0 0 24 24" fill="white"><path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/></svg>
-      <svg class="tg-btn__icon tg-btn__icon--close" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" style="display:none"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+      <svg class="tg-btn__icon tg-btn__icon--tg" id="write" width="28" height="28" viewBox="0 0 24 24" fill="white">
+        <path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z" />
+      </svg>
+      <svg class="tg-btn__icon tg-btn__icon--close" width="24" height="24" viewBox="0 0 24 24" fill="none"
+        stroke="white" stroke-width="2.5" style="display:none">
+        <line x1="18" y1="6" x2="6" y2="18" />
+        <line x1="6" y1="6" x2="18" y2="18" />
+      </svg>
       <span class="tg-btn__badge">1</span>
     </button>
 
   </div>
 
   <script src="main.js"></script>
-<script data-pplx-inline-edit>
-(function(){
-  if(window===window.top)return;
-  function inlineAll(orig,clone){
-    if(orig.nodeType!==1)return;
-    try{
-      var cs=getComputedStyle(orig);
-      var t='';
-      for(var i=0;i<cs.length;i++){t+=cs[i]+':'+cs.getPropertyValue(cs[i])+';';}
-      clone.style.cssText=t;
-    }catch(e){}
-    var oc=orig.children,cc=clone.children;
-    for(var j=0;j<oc.length&&j<cc.length;j++){inlineAll(oc[j],cc[j]);}
-  }
-  function stripExternal(clone){
-    var imgs=clone.querySelectorAll('img');
-    for(var i=0;i<imgs.length;i++){
-      var s=imgs[i].getAttribute('src');
-      if(s&&!s.startsWith('data:'))imgs[i].removeAttribute('src');
-    }
-    var all=clone.querySelectorAll('*');
-    for(var i=0;i<all.length;i++){
-      var st=all[i].style.cssText;
-      if(st&&st.indexOf('url(')>=0){
-        all[i].style.cssText=st.replace(/url\(["']?(?!data:)[^)"']*["']?\)/gi,'none');
+  <script data-pplx-inline-edit>
+    (function () {
+      if (window === window.top) return;
+      function inlineAll(orig, clone) {
+        if (orig.nodeType !== 1) return;
+        try {
+          var cs = getComputedStyle(orig);
+          var t = '';
+          for (var i = 0; i < cs.length; i++) { t += cs[i] + ':' + cs.getPropertyValue(cs[i]) + ';'; }
+          clone.style.cssText = t;
+        } catch (e) { }
+        var oc = orig.children, cc = clone.children;
+        for (var j = 0; j < oc.length && j < cc.length; j++) { inlineAll(oc[j], cc[j]); }
       }
-    }
-  }
-  window.addEventListener('message',function(e){
-    if(!e.data||e.data.type!=='INLINE_EDIT_CAPTURE_REQUEST')return;
-    var scrollX=window.scrollX||window.pageXOffset||0;
-    var scrollY=window.scrollY||window.pageYOffset||0;
-    var w=window.innerWidth,h=window.innerHeight;
-    try{
-      var clone=document.documentElement.cloneNode(true);
-      var rm=clone.querySelectorAll('script,link[rel="stylesheet"],style');
-      for(var i=0;i<rm.length;i++){rm[i].remove();}
-      inlineAll(document.documentElement,clone);
-      stripExternal(clone);
-      var html=new XMLSerializer().serializeToString(clone);
-      var svg='<svg xmlns="http://www.w3.org/2000/svg" width="'+w+'" height="'+h+'">'
-        +'<foreignObject width="100%" height="100%">'
-        +'<div xmlns="http://www.w3.org/1999/xhtml" style="width:'+w+'px;height:'+h+'px;overflow:hidden">'
-        +'<div style="transform:translate(-'+scrollX+'px,-'+scrollY+'px);transform-origin:top left">'
-        +html+'</div></div></foreignObject></svg>';
-      var svgUrl='data:image/svg+xml;charset=utf-8,'+encodeURIComponent(svg);
-      var img=new Image();
-      img.onload=function(){
-        var c=document.createElement('canvas');c.width=w;c.height=h;
-        c.getContext('2d').drawImage(img,0,0);
-        window.parent.postMessage({type:'INLINE_EDIT_SCREENSHOT_RESULT',dataUrl:c.toDataURL('image/png'),scrollX:scrollX,scrollY:scrollY},'*');
-      };
-      img.onerror=function(){
-        window.parent.postMessage({type:'INLINE_EDIT_SCREENSHOT_RESULT',dataUrl:null,scrollX:scrollX,scrollY:scrollY},'*');
-      };
-      img.src=svgUrl;
-    }catch(err){
-      window.parent.postMessage({type:'INLINE_EDIT_SCREENSHOT_RESULT',dataUrl:null,scrollX:scrollX,scrollY:scrollY},'*');
-    }
-  });
-})();
-</script></body>
+      function stripExternal(clone) {
+        var imgs = clone.querySelectorAll('img');
+        for (var i = 0; i < imgs.length; i++) {
+          var s = imgs[i].getAttribute('src');
+          if (s && !s.startsWith('data:')) imgs[i].removeAttribute('src');
+        }
+        var all = clone.querySelectorAll('*');
+        for (var i = 0; i < all.length; i++) {
+          var st = all[i].style.cssText;
+          if (st && st.indexOf('url(') >= 0) {
+            all[i].style.cssText = st.replace(/url\(["']?(?!data:)[^)"']*["']?\)/gi, 'none');
+          }
+        }
+      }
+      window.addEventListener('message', function (e) {
+        if (!e.data || e.data.type !== 'INLINE_EDIT_CAPTURE_REQUEST') return;
+        var scrollX = window.scrollX || window.pageXOffset || 0;
+        var scrollY = window.scrollY || window.pageYOffset || 0;
+        var w = window.innerWidth, h = window.innerHeight;
+        try {
+          var clone = document.documentElement.cloneNode(true);
+          var rm = clone.querySelectorAll('script,link[rel="stylesheet"],style');
+          for (var i = 0; i < rm.length; i++) { rm[i].remove(); }
+          inlineAll(document.documentElement, clone);
+          stripExternal(clone);
+          var html = new XMLSerializer().serializeToString(clone);
+          var svg = '<svg xmlns="http://www.w3.org/2000/svg" width="' + w + '" height="' + h + '">'
+            + '<foreignObject width="100%" height="100%">'
+            + '<div xmlns="http://www.w3.org/1999/xhtml" style="width:' + w + 'px;height:' + h + 'px;overflow:hidden">'
+            + '<div style="transform:translate(-' + scrollX + 'px,-' + scrollY + 'px);transform-origin:top left">'
+            + html + '</div></div></foreignObject></svg>';
+          var svgUrl = 'data:image/svg+xml;charset=utf-8,' + encodeURIComponent(svg);
+          var img = new Image();
+          img.onload = function () {
+            var c = document.createElement('canvas'); c.width = w; c.height = h;
+            c.getContext('2d').drawImage(img, 0, 0);
+            window.parent.postMessage({ type: 'INLINE_EDIT_SCREENSHOT_RESULT', dataUrl: c.toDataURL('image/png'), scrollX: scrollX, scrollY: scrollY }, '*');
+          };
+          img.onerror = function () {
+            window.parent.postMessage({ type: 'INLINE_EDIT_SCREENSHOT_RESULT', dataUrl: null, scrollX: scrollX, scrollY: scrollY }, '*');
+          };
+          img.src = svgUrl;
+        } catch (err) {
+          window.parent.postMessage({ type: 'INLINE_EDIT_SCREENSHOT_RESULT', dataUrl: null, scrollX: scrollX, scrollY: scrollY }, '*');
+        }
+      });
+    })();
+  </script>
+</body>
+
 </html>

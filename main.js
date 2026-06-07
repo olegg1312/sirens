@@ -481,3 +481,11 @@ document.querySelectorAll('a[href^="#"]').forEach(a => {
     requestAnimationFrame(loop);
   })();
 })();
+document.addEventListener('DOMContentLoaded', () => {
+  const tgButton = document.getElementById('tg-bub');
+  if (tgButton) {
+    tgButton.addEventListener('click', () => {
+      window.open('https://t.me/TargetSirens', '_blank', 'noopener');
+    });
+  }
+});
